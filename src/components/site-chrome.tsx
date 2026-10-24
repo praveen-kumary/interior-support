@@ -5,6 +5,7 @@ import {
   MessageSquare,
   X,
   ChevronDown,
+  ChevronRight,
   Sparkles,
   Phone,
   Mail,
@@ -31,29 +32,70 @@ const navLinks = [
 
 const serviceSublinks = [
   {
+    number: "01",
     label: "Project Management",
     to: "/services/project-management" as const,
+    description: "End-to-end client stewardship, vendor alignment & site milestones",
+    tag: "Total Oversight",
   },
   {
+    number: "02",
     label: "Site Inspection & QC",
     to: "/services/site-inspection-quality-control" as const,
+    description: "Laser plumb, squareness, and MEP concealed pressure hold audits",
+    tag: "Laser Audited",
   },
   {
-    label: "BOQ Verification",
+    number: "03",
+    label: "BOQ & Cost Verification",
     to: "/services/boq-execution-verification" as const,
+    description: "Forensic IS 1200 line-by-line deduction review & cost protection",
+    tag: "Cost Protection",
   },
   {
+    number: "04",
     label: "Handover & Snags",
     to: "/services/handover-post-sale-support" as const,
+    description: "120-point tactile snag audit & complete verified warranty dossier",
+    tag: "Zero-Defect Handover",
   },
 ];
 
 export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [showFloatingDock, setShowFloatingDock] = useState(false);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  // Lock background body scroll when mobile menu drawer is open
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
+  // Handle ESC key to dismiss menus smoothly
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setMenuOpen(false);
+        setDropdownOpen(false);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
 
   useEffect(() => {
     let rafId: number | null = null;
@@ -70,10 +112,10 @@ export function SiteHeader() {
           totalHeight > 0 ? Math.min(Math.max((scrollY / totalHeight) * 100, 0), 100) : 0;
 
         // Smooth Hysteresis to eliminate toggle struggle / flutter
-        if (!lastScrolled && scrollY > 40) {
+        if (!lastScrolled && scrollY > 25) {
           lastScrolled = true;
           setIsScrolled(true);
-        } else if (lastScrolled && scrollY < 15) {
+        } else if (lastScrolled && scrollY < 10) {
           lastScrolled = false;
           setIsScrolled(false);
         }
@@ -98,18 +140,18 @@ export function SiteHeader() {
     };
   }, []);
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
   return (
     <>
-      <header className={`site-header ${isScrolled ? "is-scrolled" : ""}`}>
+      <header
+        className={`site-header transition-all duration-300 ${
+          isScrolled ? "is-scrolled" : ""
+        }`}
+      >
         <div className="header-inner max-w-7xl mx-auto flex items-center justify-between">
           <BrandLogo onClick={() => setMenuOpen(false)} />
 
           <nav
-            className="main-nav hidden lg:flex items-center gap-3 xl:gap-4.5"
+            className="main-nav hidden lg:flex items-center gap-1 xl:gap-1.5"
             aria-label="Main navigation"
           >
             {navLinks.map((item) => {
@@ -117,41 +159,86 @@ export function SiteHeader() {
                 return (
                   <div
                     key={item.to}
-                    className="relative group"
+                    className="relative group/dropdown"
                     onMouseEnter={() => setDropdownOpen(true)}
                     onMouseLeave={() => setDropdownOpen(false)}
                   >
                     <Link
                       to={item.to}
-                      activeProps={{ className: "text-gold font-medium is-active" }}
-                      className="relative py-1.5 text-[0.76rem] font-medium tracking-wide text-primary-foreground/80 hover:text-gold transition-colors duration-200 inline-flex items-center gap-1 group/nav"
+                      activeProps={{
+                        className:
+                          "bg-gold/15 text-gold font-semibold border-gold/40 shadow-[0_0_12px_rgba(197,168,128,0.2)]",
+                      }}
+                      inactiveProps={{
+                        className:
+                          "text-white/80 hover:text-white hover:bg-white/[0.08] border-transparent",
+                      }}
+                      className="relative px-3.5 py-1.5 rounded-full text-[0.80rem] font-medium tracking-wide transition-all duration-200 inline-flex items-center gap-1.5 border"
                     >
                       <span>{item.label}</span>
-                      <ChevronDown className="w-3.5 h-3.5 opacity-70 group-hover:rotate-180 transition-transform duration-200" />
-                      <span className="absolute bottom-0 left-0 w-full h-[2px] bg-gold scale-x-0 group-hover/nav:scale-x-100 group-[.is-active]/nav:scale-x-100 transition-transform duration-200 origin-left" />
+                      <ChevronDown
+                        className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                          dropdownOpen ? "rotate-180 text-gold" : "opacity-60"
+                        }`}
+                      />
                     </Link>
 
-                    {/* DESKTOP SERVICES FLYOUT MENU */}
+                    {/* DESKTOP SERVICES ARCHITECTURAL MEGA FLYOUT */}
                     <div
-                      className={`absolute left-0 top-full pt-2 w-84 transition-all duration-200 z-50 ${
+                      className={`absolute left-1/2 -translate-x-1/2 top-full pt-3 w-[430px] transition-all duration-200 z-50 ${
                         dropdownOpen
                           ? "opacity-100 visible translate-y-0"
-                          : "opacity-0 invisible -translate-y-1 pointer-events-none"
+                          : "opacity-0 invisible -translate-y-2 pointer-events-none"
                       }`}
                     >
-                      <div className="bg-[#141311]/95 border border-gold/40 shadow-2xl p-2 space-y-1 text-left backdrop-blur-2xl rounded-xl">
-                        {serviceSublinks.map((s) => (
+                      <div className="bg-[#12110e]/98 border border-gold/40 shadow-[0_24px_50px_-10px_rgba(0,0,0,0.95),0_0_24px_-4px_rgba(197,168,128,0.2)] p-2.5 text-left backdrop-blur-2xl rounded-2xl">
+                        <div className="px-3 py-1.5 mb-1 flex items-center justify-between border-b border-white/10">
+                          <span className="text-[0.62rem] font-mono tracking-widest text-gold uppercase font-medium">
+                            Core Disciplines // Fiduciary PMC
+                          </span>
+                          <span className="text-[0.6rem] text-white/50 font-mono">Bengaluru</span>
+                        </div>
+
+                        <div className="space-y-1">
+                          {serviceSublinks.map((s) => (
+                            <Link
+                              key={s.to}
+                              to={s.to}
+                              onClick={() => setDropdownOpen(false)}
+                              className="group flex items-start gap-3 p-2.5 rounded-xl hover:bg-white/[0.08] border border-transparent hover:border-gold/30 transition-all duration-200"
+                            >
+                              <span className="text-xs font-mono text-gold/80 group-hover:text-gold mt-0.5 font-bold">
+                                {s.number}
+                              </span>
+                              <div className="flex-1 min-w-0">
+                                <div className="flex items-center justify-between gap-2">
+                                  <span className="text-[0.82rem] font-display font-medium text-white/95 group-hover:text-gold transition-colors">
+                                    {s.label}
+                                  </span>
+                                  <span className="text-[0.58rem] px-2 py-0.5 rounded-full bg-gold/15 text-gold border border-gold/30 font-mono font-medium shrink-0">
+                                    {s.tag}
+                                  </span>
+                                </div>
+                                <p className="text-[0.69rem] text-white/60 leading-snug mt-0.5 group-hover:text-white/85 transition-colors line-clamp-1">
+                                  {s.description}
+                                </p>
+                              </div>
+                            </Link>
+                          ))}
+                        </div>
+
+                        <div className="mt-1.5 pt-2 border-t border-white/10 px-3 py-1 flex items-center justify-between text-[0.68rem] text-white/60">
+                          <span className="flex items-center gap-1.5 text-gold font-medium">
+                            <ShieldCheck className="w-3.5 h-3.5" /> 100% Zero Contractor Margins
+                          </span>
                           <Link
-                            key={s.to}
-                            to={s.to}
+                            to="/services"
                             onClick={() => setDropdownOpen(false)}
-                            className="block px-3.5 py-2.5 rounded-lg hover:bg-white/[0.06] transition-all group/item border-l-2 border-transparent hover:border-gold hover:translate-x-0.5"
+                            className="text-white hover:text-gold underline underline-offset-2 flex items-center gap-1 transition-colors"
                           >
-                            <span className="text-xs font-display font-medium text-white/90 group-hover/item:text-gold transition-colors block">
-                              {s.label}
-                            </span>
+                            All Disciplines <ArrowRight className="w-3 h-3" />
                           </Link>
-                        ))}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -162,29 +249,48 @@ export function SiteHeader() {
                 <Link
                   key={item.to}
                   to={item.to}
-                  activeProps={{ className: "text-gold font-medium is-active" }}
-                  className="relative py-1.5 text-[0.76rem] font-medium tracking-wide text-primary-foreground/80 hover:text-gold transition-colors duration-200 group/nav"
+                  activeProps={{
+                    className:
+                      "bg-gold/15 text-gold font-semibold border-gold/40 shadow-[0_0_12px_rgba(197,168,128,0.2)]",
+                  }}
+                  inactiveProps={{
+                    className:
+                      "text-white/80 hover:text-white hover:bg-white/[0.08] border-transparent",
+                  }}
+                  className="relative px-3.5 py-1.5 rounded-full text-[0.80rem] font-medium tracking-wide transition-all duration-200 border"
                 >
                   <span>{item.label}</span>
-                  <span className="absolute bottom-0 left-0 w-full h-[2px] bg-gold scale-x-0 group-hover/nav:scale-x-100 group-[.is-active]/nav:scale-x-100 transition-transform duration-200 origin-left" />
                 </Link>
               );
             })}
           </nav>
 
-          <div className="header-actions hidden sm:flex items-center gap-2">
+          <div className="header-actions hidden sm:flex items-center gap-2.5">
+            <a
+              href="tel:+919820184729"
+              className="hidden xl:inline-flex items-center gap-1.5 text-[0.72rem] text-white/75 hover:text-gold transition-colors font-mono tracking-wide px-3 py-1.5 rounded-full border border-white/10 hover:border-gold/30 bg-white/[0.04]"
+              aria-label="Call Direct Client Advisory Line"
+            >
+              <Phone className="w-3 h-3 text-gold" />
+              <span>+91 98201 84729</span>
+            </a>
+
             <Button
-              className="header-cta header-cta-shimmer bg-gold text-[#141311] hover:bg-gold/90 text-[0.72rem] px-3.5 py-1.5 font-semibold rounded-full shadow-sm"
+              className="header-cta bg-gold hover:bg-[#d8c09a] text-[#12110e] font-semibold text-xs tracking-wide px-4 py-2 rounded-full shadow-md hover:shadow-gold/25 transition-all duration-200 active:scale-95 group"
               asChild
             >
               <Link to="/get-a-quote">
-                Get a Quote <ArrowRight className="w-3.5 h-3.5 ml-1" aria-hidden="true" />
+                <span>Get a Quote</span>
+                <ArrowRight
+                  className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-0.5"
+                  aria-hidden="true"
+                />
               </Link>
             </Button>
           </div>
 
           <Button
-            className="mobile-menu-toggle lg:hidden text-primary-foreground"
+            className="mobile-menu-toggle lg:hidden w-10 h-10 rounded-full bg-white/[0.08] hover:bg-white/[0.16] border border-white/15 text-white flex items-center justify-center transition-all duration-200 active:scale-95 p-0"
             variant="ghost"
             size="icon"
             aria-label={menuOpen ? "Close navigation" : "Open navigation"}
@@ -193,66 +299,129 @@ export function SiteHeader() {
             onClick={() => setMenuOpen((open) => !open)}
           >
             {menuOpen ? (
-              <X aria-hidden="true" className="w-5 h-5" />
+              <X aria-hidden="true" className="w-5 h-5 text-gold" />
             ) : (
               <Menu aria-hidden="true" className="w-5 h-5" />
             )}
           </Button>
         </div>
 
-        {/* MOBILE NAVIGATION DRAWER */}
+        {/* MOBILE NAVIGATION DRAWER & BACKDROP */}
+        {menuOpen && (
+          <div
+            className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm lg:hidden transition-opacity duration-300 pointer-events-auto"
+            onClick={() => setMenuOpen(false)}
+            aria-hidden="true"
+          />
+        )}
+
         <nav
           id="mobile-navigation"
-          className={`mobile-nav${menuOpen ? " is-open" : ""}`}
+          className={`mobile-nav fixed top-[70px] sm:top-[74px] inset-x-3 sm:inset-x-6 z-50 lg:hidden rounded-2xl bg-[#12110e]/98 border border-gold/40 shadow-[0_24px_50px_-10px_rgba(0,0,0,0.95),0_0_24px_rgba(197,168,128,0.2)] backdrop-blur-2xl transition-all duration-300 overflow-hidden ${
+            menuOpen
+              ? "opacity-100 translate-y-0 visible pointer-events-auto"
+              : "opacity-0 -translate-y-4 invisible pointer-events-none"
+          }`}
           aria-label="Mobile navigation"
-          hidden={!menuOpen}
         >
-          <div className="mobile-nav-inner p-6 space-y-4 max-h-[85vh] overflow-y-auto">
-            <div className="space-y-1">
-              {navLinks.map((item, index) => (
-                <div key={item.to}>
-                  <Link
-                    to={item.to}
-                    activeProps={{ className: "is-active text-gold font-semibold" }}
-                    onClick={() => setMenuOpen(false)}
-                    className="flex items-center py-2.5 text-primary-foreground/90 hover:text-gold border-b border-border/10"
-                  >
-                    <span className="text-xs text-gold/70 mr-3 font-mono">{`0${index + 1}`}</span>
-                    <span className="font-display font-medium text-base">{item.label}</span>
-                    <ArrowRight aria-hidden="true" className="w-4 h-4 ml-auto text-gold/60" />
-                  </Link>
+          <div className="mobile-nav-inner p-5 max-h-[calc(100svh-95px)] overflow-y-auto space-y-4">
+            <div className="divide-y divide-white/10">
+              {navLinks.map((item, index) => {
+                if (item.hasDropdown) {
+                  return (
+                    <div key={item.to} className="py-1">
+                      <button
+                        type="button"
+                        onClick={() => setMobileServicesOpen((prev) => !prev)}
+                        className="w-full flex items-center justify-between py-2.5 text-left text-white/95 hover:text-gold transition-colors"
+                      >
+                        <div className="flex items-center gap-3">
+                          <span className="text-xs text-gold/80 font-mono font-semibold">{`0${index + 1}`}</span>
+                          <span className="font-display font-medium text-base tracking-wide">{item.label}</span>
+                        </div>
+                        <ChevronDown
+                          className={`w-4 h-4 text-gold transition-transform duration-200 ${
+                            mobileServicesOpen ? "rotate-180" : ""
+                          }`}
+                        />
+                      </button>
 
-                  {item.label === "Services" && (
-                    <div className="pl-6 py-2 space-y-1.5 bg-card/20 my-1 border-l-2 border-gold/40">
-                      {serviceSublinks.map((s) => (
-                        <Link
-                          key={s.to}
-                          to={s.to}
-                          onClick={() => setMenuOpen(false)}
-                          className="block py-1 text-xs text-primary-foreground/80 hover:text-gold"
-                        >
-                          {s.label}
-                        </Link>
-                      ))}
+                      {mobileServicesOpen && (
+                        <div className="pl-3 pr-1 py-2 space-y-1.5 border-l-2 border-gold/40 my-1 bg-white/[0.03] rounded-r-xl">
+                          {serviceSublinks.map((s) => (
+                            <Link
+                              key={s.to}
+                              to={s.to}
+                              onClick={() => setMenuOpen(false)}
+                              className="flex items-start justify-between p-2 rounded-lg hover:bg-white/[0.08] transition-colors group"
+                            >
+                              <div>
+                                <div className="flex items-center gap-2">
+                                  <span className="text-[0.65rem] font-mono text-gold font-bold">{s.number}</span>
+                                  <span className="text-xs font-display font-medium text-white group-hover:text-gold transition-colors">
+                                    {s.label}
+                                  </span>
+                                </div>
+                                <p className="text-[0.68rem] text-white/60 mt-0.5 line-clamp-1">{s.description}</p>
+                              </div>
+                              <span className="text-[0.58rem] px-1.5 py-0.5 rounded-full bg-gold/15 text-gold border border-gold/30 font-mono shrink-0 ml-2">
+                                {s.tag}
+                              </span>
+                            </Link>
+                          ))}
+                          <div className="pt-1 pl-2">
+                            <Link
+                              to="/services"
+                              onClick={() => setMenuOpen(false)}
+                              className="text-[0.72rem] text-gold font-medium hover:underline inline-flex items-center gap-1"
+                            >
+                              All Disciplines Overview <ArrowRight className="w-3 h-3" />
+                            </Link>
+                          </div>
+                        </div>
+                      )}
                     </div>
-                  )}
-                </div>
-              ))}
+                  );
+                }
+
+                return (
+                  <div key={item.to} className="py-1">
+                    <Link
+                      to={item.to}
+                      activeProps={{ className: "text-gold font-semibold" }}
+                      onClick={() => setMenuOpen(false)}
+                      className="flex items-center py-2.5 text-white/90 hover:text-gold transition-colors group"
+                    >
+                      <span className="text-xs text-gold/80 mr-3 font-mono font-semibold">{`0${index + 1}`}</span>
+                      <span className="font-display font-medium text-base tracking-wide">{item.label}</span>
+                      <ArrowRight aria-hidden="true" className="w-4 h-4 ml-auto text-white/40 group-hover:text-gold group-hover:translate-x-0.5 transition-all" />
+                    </Link>
+                  </div>
+                );
+              })}
             </div>
 
-            <div className="mobile-nav-footer mt-4 pt-4 border-t border-border/15 space-y-2">
+            <div className="pt-3 border-t border-white/10 space-y-2.5">
               <Button
-                className="w-full header-cta justify-center bg-gold text-foreground hover:bg-gold/90 text-xs py-2.5"
+                className="w-full bg-gold text-[#12110e] hover:bg-[#d8c09a] font-semibold text-xs py-3 rounded-full shadow-md"
                 asChild
                 onClick={() => setMenuOpen(false)}
               >
                 <Link to="/get-a-quote">
-                  Get an Instant Quote{" "}
-                  <ArrowRight className="w-3.5 h-3.5 ml-1" aria-hidden="true" />
+                  Get a Project Quote <ArrowRight className="w-3.5 h-3.5 ml-1" aria-hidden="true" />
                 </Link>
               </Button>
-              <p className="text-[0.68rem] text-muted-foreground text-center">
-                One team. Complete accountability.
+
+              <a
+                href="tel:+919820184729"
+                className="w-full flex items-center justify-center gap-2 py-2 px-3 rounded-full border border-white/15 bg-white/[0.04] text-white/90 hover:text-gold hover:border-gold/40 text-xs font-mono transition-colors"
+              >
+                <Phone className="w-3.5 h-3.5 text-gold" />
+                <span>Direct Advisory: +91 98201 84729</span>
+              </a>
+
+              <p className="text-[0.62rem] text-white/50 text-center font-mono tracking-wider uppercase pt-1">
+                Bengaluru • 100% Client-Side Independent PMC
               </p>
             </div>
           </div>
