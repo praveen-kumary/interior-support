@@ -194,6 +194,7 @@ function ServicesPage() {
           <img
             src={projectSite}
             alt="Interior project team reviewing architectural plans on an active fit-out site"
+            className="hero-focal-drawing-review"
             width={1600}
             height={1104}
             fetchPriority="high"

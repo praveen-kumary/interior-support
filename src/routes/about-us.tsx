@@ -121,6 +121,7 @@ function AboutPage() {
           <img
             src={projectSite}
             alt="Interior Support project management team reviewing site drawings"
+            className="hero-focal-drawing-review"
             width={1600}
             height={1104}
             fetchPriority="high"

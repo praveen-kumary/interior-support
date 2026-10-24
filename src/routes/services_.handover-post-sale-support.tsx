@@ -198,6 +198,7 @@ function HandoverSupportPage() {
           <img
             src={handoverPhoto}
             alt="Interior project manager reviewing final handover documentation and snag clearance with homeowner"
+            className="hero-focal-handover"
             width={1600}
             height={1104}
             fetchPriority="high"

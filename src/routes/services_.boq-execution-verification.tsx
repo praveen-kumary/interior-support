@@ -208,6 +208,7 @@ function BoqVerificationServicePage() {
           <img
             src={boqPhoto}
             alt="Interior technical specialist cross-checking contractor BOQ line items against architectural drawings on site"
+            className="hero-focal-boq-audit"
             width={1600}
             height={1104}
             fetchPriority="high"

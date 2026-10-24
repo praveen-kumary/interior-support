@@ -203,6 +203,7 @@ function SiteInspectionServicePage() {
           <img
             src={inspectionPhoto}
             alt="Site inspector using optical laser level to verify wall verticality in luxury interior site"
+            className="hero-focal-site-inspection"
             width={1600}
             height={1104}
             fetchPriority="high"

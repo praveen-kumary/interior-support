@@ -26,16 +26,19 @@ const heroSlides = [
     id: "mep-laser-alignment-site",
     image: mepLaserPhoto,
     alt: "Client-side site engineer in hard hat using precision laser leveling device to audit ceiling ducting and MEP runs on active fit-out site",
+    focalClass: "hero-focal-mep-laser",
   },
   {
     id: "survey-drawing-coordination",
     image: projectSite,
     alt: "Interior project managers and engineers in safety hard hats reviewing architectural drawings and joinery on active site",
+    focalClass: "hero-focal-drawing-review",
   },
   {
     id: "site-tolerance-inspection",
     image: inspectionPhoto,
     alt: "Technical quality inspector auditing partition wall plumb and masonry alignment with spirit level and laser distance measure on site",
+    focalClass: "hero-focal-site-inspection",
   },
 ];
 
@@ -275,7 +278,7 @@ function HomePage() {
             return (
               <img
                 key={slide.id}
-                className={`hero-image transition-all duration-1000 ease-out ${
+                className={`hero-image ${slide.focalClass} transition-all duration-1000 ease-out ${
                   isActive
                     ? "opacity-100 scale-100 z-[-2]"
                     : "opacity-0 scale-105 z-[-3] pointer-events-none"

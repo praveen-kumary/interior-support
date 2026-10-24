@@ -243,6 +243,7 @@ function ProjectManagementServicePage() {
           <img
             src={projectSite}
             alt="Interior project manager reviewing architectural drawings with site leads in luxury apartment"
+            className="hero-focal-drawing-review"
             width={1600}
             height={1104}
             fetchPriority="high"
