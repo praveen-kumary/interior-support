@@ -9,7 +9,7 @@ import {
   type ErrorComponentProps,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
-import { Home, PhoneCall, ArrowRight } from "lucide-react";
+import { Home } from "lucide-react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -20,84 +20,37 @@ function NotFoundComponent() {
   return (
     <div className="min-h-screen flex flex-col bg-background text-foreground">
       <SiteHeader />
-      <main className="flex-1 flex items-center justify-center py-20 px-4 sm:px-6">
-        <div className="max-w-2xl w-full text-center space-y-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-gold/30 bg-gold/10 text-gold text-xs font-mono uppercase tracking-widest">
-            <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
-            404 // Blueprint Unmapped
-          </div>
-
-          <h1 className="text-4xl sm:text-6xl font-display font-medium text-foreground tracking-tight">
-            Drawing Not Located.
-          </h1>
-
-          <p className="text-sm sm:text-base text-muted-foreground max-w-lg mx-auto leading-relaxed">
-            The project blueprint, discipline, or document URL you navigated to does not exist or has
-            been relocated in our directory.
+      <main className="flex-1 flex items-center justify-center py-24 px-4 sm:px-6">
+        <div className="max-w-md w-full text-center space-y-4">
+          <p className="text-7xl sm:text-8xl font-bold tracking-tight text-foreground font-mono">
+            404
           </p>
 
-          <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
+          <h1 className="text-2xl sm:text-3xl font-display font-semibold text-foreground">
+            Page Not Found
+          </h1>
+
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            The page you are looking for doesn&apos;t exist, has been removed, or is temporarily
+            unavailable.
+          </p>
+
+          <div className="pt-4 flex flex-wrap items-center justify-center gap-3">
             <Button
-              className="bg-gold text-foreground hover:bg-gold/90 font-medium px-5 py-2.5"
+              className="bg-gold text-foreground hover:bg-gold/90 font-medium px-6 py-2.5"
               asChild
             >
               <Link to="/">
-                <Home className="w-4 h-4 mr-1.5" /> Return to Homepage
+                <Home className="w-4 h-4 mr-1.5" /> Back to Home
               </Link>
             </Button>
             <Button
               variant="outline"
-              className="border-border text-foreground hover:border-gold hover:text-gold"
+              className="border-border text-foreground hover:border-gold hover:text-gold px-6 py-2.5"
               asChild
             >
-              <Link to="/contact-us">
-                <PhoneCall className="w-4 h-4 mr-1.5" /> Contact Advisory Desk
-              </Link>
+              <Link to="/contact-us">Contact Us</Link>
             </Button>
-          </div>
-
-          <div className="pt-10 border-t border-border/60">
-            <span className="text-xs uppercase tracking-widest font-mono text-muted-foreground block mb-4">
-              Explore Active Site Gateways
-            </span>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-left">
-              <Link
-                to="/services"
-                className="p-3 bg-card border border-border/80 hover:border-gold/40 rounded-xs transition-colors group"
-              >
-                <span className="text-xs font-display font-semibold text-foreground group-hover:text-gold block">
-                  Disciplines →
-                </span>
-                <span className="text-[0.68rem] text-muted-foreground">4 core services</span>
-              </Link>
-              <Link
-                to="/gallery"
-                className="p-3 bg-card border border-border/80 hover:border-gold/40 rounded-xs transition-colors group"
-              >
-                <span className="text-xs font-display font-semibold text-foreground group-hover:text-gold block">
-                  Portfolio →
-                </span>
-                <span className="text-[0.68rem] text-muted-foreground">Real site photos</span>
-              </Link>
-              <Link
-                to="/pricing"
-                className="p-3 bg-card border border-border/80 hover:border-gold/40 rounded-xs transition-colors group"
-              >
-                <span className="text-xs font-display font-semibold text-foreground group-hover:text-gold block">
-                  Pricing →
-                </span>
-                <span className="text-[0.68rem] text-muted-foreground">Fixed retainers</span>
-              </Link>
-              <Link
-                to="/get-a-quote"
-                className="p-3 bg-card border border-border/80 hover:border-gold/40 rounded-xs transition-colors group"
-              >
-                <span className="text-xs font-display font-semibold text-foreground group-hover:text-gold block">
-                  Enquiry →
-                </span>
-                <span className="text-[0.68rem] text-muted-foreground">Detailed scope</span>
-              </Link>
-            </div>
           </div>
         </div>
       </main>
