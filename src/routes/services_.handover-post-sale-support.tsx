@@ -21,7 +21,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 
-import handoverPhoto from "@/assets/project-handover.jpg";
+import handoverPhoto from "@/assets/project-handover.webp";
 import { ScrollMotion } from "@/components/scroll-motion";
 import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 import { AnimatedCounter } from "@/components/animated-counter";

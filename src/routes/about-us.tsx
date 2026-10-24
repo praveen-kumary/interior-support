@@ -10,8 +10,8 @@ import {
   Award,
 } from "lucide-react";
 
-import projectSite from "@/assets/interior-project-site.jpg";
-import inspectionPhoto from "@/assets/site-inspection.jpg";
+import projectSite from "@/assets/interior-project-site.webp";
+import inspectionPhoto from "@/assets/site-inspection.webp";
 import { ScrollMotion } from "@/components/scroll-motion";
 import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 import { AnimatedCounter } from "@/components/animated-counter";

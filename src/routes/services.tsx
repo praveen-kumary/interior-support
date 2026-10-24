@@ -1,10 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, AlertCircle, CheckCircle2, FileSpreadsheet, Layers } from "lucide-react";
 
-import boqPhoto from "@/assets/boq-verification.jpg";
-import handoverPhoto from "@/assets/project-handover.jpg";
-import projectSite from "@/assets/interior-project-site.jpg";
-import inspectionPhoto from "@/assets/site-inspection.jpg";
+import boqPhoto from "@/assets/boq-verification.webp";
+import handoverPhoto from "@/assets/project-handover.webp";
+import projectSite from "@/assets/interior-project-site.webp";
+import inspectionPhoto from "@/assets/site-inspection.webp";
 import { ScrollMotion } from "@/components/scroll-motion";
 import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 import { Button } from "@/components/ui/button";

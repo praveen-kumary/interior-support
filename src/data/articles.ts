@@ -1,9 +1,9 @@
-import boqPhoto from "@/assets/boq-verification.jpg";
-import projectSite from "@/assets/interior-project-site.jpg";
-import handoverPhoto from "@/assets/project-handover.jpg";
-import inspectionPhoto from "@/assets/site-inspection.jpg";
-import mepLaserPhoto from "@/assets/mep-laser-inspection.jpg";
-import boqMaterialsPhoto from "@/assets/boq-material-specifications.jpg";
+import boqPhoto from "@/assets/boq-verification.webp";
+import projectSite from "@/assets/interior-project-site.webp";
+import handoverPhoto from "@/assets/project-handover.webp";
+import inspectionPhoto from "@/assets/site-inspection.webp";
+import mepLaserPhoto from "@/assets/mep-laser-inspection.webp";
+import boqMaterialsPhoto from "@/assets/boq-material-specifications.webp";
 
 export interface ArticleSection {
   title: string;

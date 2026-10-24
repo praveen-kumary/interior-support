@@ -19,8 +19,8 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 
-import inspectionPhoto from "@/assets/site-inspection.jpg";
-import mepLaserPhoto from "@/assets/mep-laser-inspection.jpg";
+import inspectionPhoto from "@/assets/site-inspection.webp";
+import mepLaserPhoto from "@/assets/mep-laser-inspection.webp";
 import { ScrollMotion } from "@/components/scroll-motion";
 import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 import { AnimatedCounter } from "@/components/animated-counter";

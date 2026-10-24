@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 
-import projectSite from "@/assets/interior-project-site.jpg";
+import projectSite from "@/assets/interior-project-site.webp";
 import { articles, type Article } from "@/data/articles";
 import { ScrollMotion } from "@/components/scroll-motion";
 import { SiteFooter, SiteHeader } from "@/components/site-chrome";

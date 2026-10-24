@@ -36,7 +36,7 @@ export const galleryItems: GalleryItem[] = [
       "Warm 3000K LED task lighting strip integration beneath wall units"
     ],
     "id": "kitchen-taupe-l-shape-terrazzo",
-    "image": "/gallery/kitchen-taupe-l-shape-terrazzo.jpg",
+    "image": "/gallery/kitchen-taupe-l-shape-terrazzo.webp",
     "alt": "Contemporary taupe acrylic L-shaped modular kitchen with seamless quartz countertop and terrazzo tile backsplash."
   },
   {
@@ -57,7 +57,7 @@ export const galleryItems: GalleryItem[] = [
       "Zero-lip transition verified between granite slab and wall tile"
     ],
     "id": "kitchen-sage-tall-unit-oak",
-    "image": "/gallery/kitchen-sage-tall-unit-oak.jpg",
+    "image": "/gallery/kitchen-sage-tall-unit-oak.webp",
     "alt": "Sage green and natural oak dual-tone modular kitchen featuring tall appliance housing and black granite countertop."
   },
   {
@@ -78,7 +78,7 @@ export const galleryItems: GalleryItem[] = [
       "Food-grade epoxy grout verification across subway tile backsplash"
     ],
     "id": "pantry-white-shaker-fluted-glass",
-    "image": "/gallery/pantry-white-shaker-fluted-glass.jpg",
+    "image": "/gallery/pantry-white-shaker-fluted-glass.webp",
     "alt": "Classical white shaker pantry and dry bar unit with fluted glass mullion wall cabinets, brass hardware, and wine-red subway tile."
   },
   {
@@ -99,7 +99,7 @@ export const galleryItems: GalleryItem[] = [
       "Precision shadow gap line between acoustic wood paneling and ceiling"
     ],
     "id": "tv-fluted-walnut-damask-feature",
-    "image": "/gallery/tv-fluted-walnut-damask-feature.jpg",
+    "image": "/gallery/tv-fluted-walnut-damask-feature.webp",
     "alt": "Fluted dark walnut center TV panel flanked by damask wallpaper panels and floating low-profile console with gold hardware."
   },
   {
@@ -120,7 +120,7 @@ export const galleryItems: GalleryItem[] = [
       "Child-safe rounded edge profile on all timber corners and baseboards"
     ],
     "id": "bedroom-kids-scalloped-fluted-headboard",
-    "image": "/gallery/bedroom-kids-scalloped-fluted-headboard.jpg",
+    "image": "/gallery/bedroom-kids-scalloped-fluted-headboard.webp",
     "alt": "Custom vertical fluted scalloped wall paneling in soft blush upholstery with integrated bed base and whimsical mural backdrop."
   },
   {
@@ -141,7 +141,7 @@ export const galleryItems: GalleryItem[] = [
       "Concealed cantilever steel brackets for stone display ledges"
     ],
     "id": "living-backlit-arch-marble-niche",
-    "image": "/gallery/living-backlit-arch-marble-niche.jpg",
+    "image": "/gallery/living-backlit-arch-marble-niche.webp",
     "alt": "Illuminated backlit wall niche featuring symmetrical architectural arch, botanical wallpaper backing, and floating marble display ledges."
   },
   {
@@ -162,7 +162,7 @@ export const galleryItems: GalleryItem[] = [
       "Dual-height hanging rods and rounded open shelving compartments"
     ],
     "id": "wardrobe-kids-arch-cutout-study",
-    "image": "/gallery/wardrobe-kids-arch-cutout-study.jpg",
+    "image": "/gallery/wardrobe-kids-arch-cutout-study.webp",
     "alt": "Children's modular wardrobe in pastel pink and sage tones with custom arch handle cutouts, open bookcase shelving, and study desk."
   },
   {
@@ -183,7 +183,7 @@ export const galleryItems: GalleryItem[] = [
       "Toughened 5mm bronze float glass shatter-safety certification"
     ],
     "id": "wardrobe-bronze-sliding-study-desk",
-    "image": "/gallery/wardrobe-bronze-sliding-study-desk.jpg",
+    "image": "/gallery/wardrobe-bronze-sliding-study-desk.webp",
     "alt": "Integrated floating study desk with overhead display shelves adjacent to bronze-tinted glass sliding wardrobe with fluted frame."
   },
   {
@@ -204,7 +204,7 @@ export const galleryItems: GalleryItem[] = [
       "Dust-seal felt brush strip audit along door overlapping profile"
     ],
     "id": "wardrobe-sliding-white-bronze-band",
-    "image": "/gallery/wardrobe-sliding-white-bronze-band.jpg",
+    "image": "/gallery/wardrobe-sliding-white-bronze-band.webp",
     "alt": "Dual-tone sliding wardrobe combining high-gloss white acrylic with horizontal bronze-tinted glass band on heavy-duty aluminum track."
   },
   {
@@ -225,7 +225,7 @@ export const galleryItems: GalleryItem[] = [
       "Bespoke wicker pull-out basket ventilation and smooth slide check"
     ],
     "id": "kitchen-sage-roller-shutter-garage",
-    "image": "/gallery/kitchen-sage-roller-shutter-garage.jpg",
+    "image": "/gallery/kitchen-sage-roller-shutter-garage.webp",
     "alt": "Sage green modular kitchen with integrated appliance garage roller shutter, wicker vegetable baskets, and black quartz countertop."
   },
   {
@@ -246,7 +246,7 @@ export const galleryItems: GalleryItem[] = [
       "Internal carcass plumb and 90-degree squareness verified with digital square"
     ],
     "id": "audit-wardrobe-internal-carcass-shelving",
-    "image": "/gallery/audit-wardrobe-internal-carcass-shelving.jpg",
+    "image": "/gallery/audit-wardrobe-internal-carcass-shelving.webp",
     "alt": "Technical audit of internal wardrobe partitions, showing shelf spacing, 2mm PVC edge banding, and full-extension drawer runners."
   },
   {
@@ -267,7 +267,7 @@ export const galleryItems: GalleryItem[] = [
       "Concealed magnetic catches and smooth push-to-open latch operation"
     ],
     "id": "wardrobe-dark-walnut-arched-brass-grill",
-    "image": "/gallery/wardrobe-dark-walnut-arched-brass-grill.jpg",
+    "image": "/gallery/wardrobe-dark-walnut-arched-brass-grill.webp",
     "alt": "Master bedroom suite pairing rich walnut sliding wardrobe with classical arched wardrobe doors featuring decorative brass mesh grills."
   },
   {
@@ -288,7 +288,7 @@ export const galleryItems: GalleryItem[] = [
       "Internal wardrobe lighting switch plunger sensitivity test"
     ],
     "id": "wardrobe-sliding-drawer-chest-internals",
-    "image": "/gallery/wardrobe-sliding-drawer-chest-internals.jpg",
+    "image": "/gallery/wardrobe-sliding-drawer-chest-internals.webp",
     "alt": "Internal storage carcass inspection showing lockable security drawers, high-capacity hanging section, and top seasonal loft space."
   },
   {
@@ -309,7 +309,7 @@ export const galleryItems: GalleryItem[] = [
       "Wall plumb check ensuring complete light blockout behind headboard"
     ],
     "id": "bedroom-master-fluted-bed-sliding-wardrobe",
-    "image": "/gallery/bedroom-master-fluted-bed-sliding-wardrobe.jpg",
+    "image": "/gallery/bedroom-master-fluted-bed-sliding-wardrobe.webp",
     "alt": "Master bedroom fit-out featuring vertical fluted fabric headboard, hydraulic storage bed base, and floor-to-ceiling glass sliding wardrobe."
   },
   {
@@ -330,7 +330,7 @@ export const galleryItems: GalleryItem[] = [
       "Under-bed storage ventilated ply floor panel inspection"
     ],
     "id": "bedroom-upholstered-fluted-bed-hydraulic",
-    "image": "/gallery/bedroom-upholstered-fluted-bed-hydraulic.jpg",
+    "image": "/gallery/bedroom-upholstered-fluted-bed-hydraulic.webp",
     "alt": "Detailed inspection of fluted upholstered headboard stitching, fabric tension, and heavy-duty steel hydraulic storage bed mechanism."
   },
   {
@@ -351,7 +351,7 @@ export const galleryItems: GalleryItem[] = [
       "Vertical handle plumb alignment within 0.5mm variance"
     ],
     "id": "wardrobe-beige-matte-6door-bay-seat",
-    "image": "/gallery/wardrobe-beige-matte-6door-bay-seat.jpg",
+    "image": "/gallery/wardrobe-beige-matte-6door-bay-seat.webp",
     "alt": "Floor-to-ceiling 6-door hinged wardrobe in matte beige laminate with edge-mounted slim black handles, top lofts, and integrated window bench."
   },
   {
@@ -372,7 +372,7 @@ export const galleryItems: GalleryItem[] = [
       "Concealed acoustic bumper pads installed on every door strike zone"
     ],
     "id": "wardrobe-hinged-handle-verticality-check",
-    "image": "/gallery/wardrobe-hinged-handle-verticality-check.jpg",
+    "image": "/gallery/wardrobe-hinged-handle-verticality-check.webp",
     "alt": "Close-up quality audit verifying 2mm uniform reveal gaps between 6 hinged wardrobe shutters and vertical slim black profile handles."
   },
   {
@@ -393,7 +393,7 @@ export const galleryItems: GalleryItem[] = [
       "Floating single-drawer vanity box cantilever strength verification"
     ],
     "id": "bedroom-artdeco-brass-radial-headboard",
-    "image": "/gallery/bedroom-artdeco-brass-radial-headboard.jpg",
+    "image": "/gallery/bedroom-artdeco-brass-radial-headboard.webp",
     "alt": "Custom art-deco gold brass radial inlay headboard paneling paired with textured wallpaper and asymmetric vanity dressing mirror."
   },
   {
@@ -414,7 +414,7 @@ export const galleryItems: GalleryItem[] = [
       "Integrated under-window drawer unit transition without clearance gap"
     ],
     "id": "wardrobe-mint-tinted-glass-gold-profile",
-    "image": "/gallery/wardrobe-mint-tinted-glass-gold-profile.jpg",
+    "image": "/gallery/wardrobe-mint-tinted-glass-gold-profile.webp",
     "alt": "3-door frosted mint and bronze tinted glass sliding wardrobe with champagne gold aluminum frames and integrated under-window drawer base."
   },
   {
@@ -435,7 +435,7 @@ export const galleryItems: GalleryItem[] = [
       "Concealed electrical driver location tagged for easy maintenance access"
     ],
     "id": "living-geometric-cove-ceiling-lighting",
-    "image": "/gallery/living-geometric-cove-ceiling-lighting.jpg",
+    "image": "/gallery/living-geometric-cove-ceiling-lighting.webp",
     "alt": "Multi-tiered geometric gypsum false ceiling with warm 3000K LED cove illumination and contrasting high-gloss black glass accent paneling."
   },
   {
@@ -456,7 +456,7 @@ export const galleryItems: GalleryItem[] = [
       "Anti-deflection center stiffener rod integrated into slim aluminum sash"
     ],
     "id": "wardrobe-floor-to-ceiling-black-profile-glass",
-    "image": "/gallery/wardrobe-floor-to-ceiling-black-profile-glass.jpg",
+    "image": "/gallery/wardrobe-floor-to-ceiling-black-profile-glass.webp",
     "alt": "Full-height 9.5ft black anodized aluminum profile sliding wardrobe with tinted reflective glass and recessed ceiling channel."
   },
   {
@@ -477,7 +477,7 @@ export const galleryItems: GalleryItem[] = [
       "Concealed vertical finger-pull profile with ergonomic grip check"
     ],
     "id": "wardrobe-black-glass-white-carcass-suite",
-    "image": "/gallery/wardrobe-black-glass-white-carcass-suite.jpg",
+    "image": "/gallery/wardrobe-black-glass-white-carcass-suite.webp",
     "alt": "Contemporary black glass framed wardrobe doors contrasting against pristine white cabinetry and mirror-finish vitrified tile flooring."
   },
   {
@@ -498,7 +498,7 @@ export const galleryItems: GalleryItem[] = [
       "Dedicated 16A circuit breaker isolation for built-in dishwasher"
     ],
     "id": "audit-kitchen-plumbing-dishwasher-junction",
-    "image": "/gallery/audit-kitchen-plumbing-dishwasher-junction.jpg",
+    "image": "/gallery/audit-kitchen-plumbing-dishwasher-junction.webp",
     "alt": "Technical audit of under-counter dishwasher integration, hot/cold plumbing manifold, anti-siphon valve, and moisture barrier seal."
   },
   {
@@ -519,7 +519,7 @@ export const galleryItems: GalleryItem[] = [
       "Skirting board termination profile aligned flush with wardrobe base"
     ],
     "id": "wardrobe-recessed-sliding-cove-integration",
-    "image": "/gallery/wardrobe-recessed-sliding-cove-integration.jpg",
+    "image": "/gallery/wardrobe-recessed-sliding-cove-integration.webp",
     "alt": "Recessed tinted glass sliding wardrobe with ambient ceiling cove lighting and seamless flush skirting board detailing."
   },
   {
@@ -540,7 +540,7 @@ export const galleryItems: GalleryItem[] = [
       "Copper gas piping pressure tested at 1.5x operating pressure"
     ],
     "id": "kitchen-built-in-hob-countertop-routing",
-    "image": "/gallery/kitchen-built-in-hob-countertop-routing.jpg",
+    "image": "/gallery/kitchen-built-in-hob-countertop-routing.webp",
     "alt": "Built-in 4-burner tempered glass hob installed with precision CNC countertop cutout routing, heat-resistant silicone seal, and soft-close drawers."
   },
   {
@@ -561,7 +561,7 @@ export const galleryItems: GalleryItem[] = [
       "Precision door reveal gap alignment between appliance flanges and cabinetry"
     ],
     "id": "kitchen-appliance-tower-oven-microwave",
-    "image": "/gallery/kitchen-appliance-tower-oven-microwave.jpg",
+    "image": "/gallery/kitchen-appliance-tower-oven-microwave.webp",
     "alt": "Tall appliance tower housing built-in convection oven and microwave with glossy white acrylic cabinetry and concealed chimney duct boxing."
   },
   {
@@ -582,7 +582,7 @@ export const galleryItems: GalleryItem[] = [
       "Upper cabinet lift-up stay hardware calibrated to hold at any angle"
     ],
     "id": "kitchen-walnut-white-mosaic-backsplash",
-    "image": "/gallery/kitchen-walnut-white-mosaic-backsplash.jpg",
+    "image": "/gallery/kitchen-walnut-white-mosaic-backsplash.webp",
     "alt": "Warm walnut base cabinets with Gola profile brass handles, high-gloss white upper units, and geometric mosaic tile backsplash."
   },
   {
@@ -603,7 +603,7 @@ export const galleryItems: GalleryItem[] = [
       "Smooth PU matte spray finish inspection with zero orange peel texture"
     ],
     "id": "paneling-parisian-boiserie-wall-sconces",
-    "image": "/gallery/paneling-parisian-boiserie-wall-sconces.jpg",
+    "image": "/gallery/paneling-parisian-boiserie-wall-sconces.webp",
     "alt": "Symmetrical French Parisian boiserie wall mouldings with modern slim vertical sconce lighting, cove ceiling, and fluted glass wardrobe."
   },
   {
@@ -624,7 +624,7 @@ export const galleryItems: GalleryItem[] = [
       "Even water slope tested toward sink basin on wet countertop zone"
     ],
     "id": "kitchen-cream-l-shape-black-quartz",
-    "image": "/gallery/kitchen-cream-l-shape-black-quartz.jpg",
+    "image": "/gallery/kitchen-cream-l-shape-black-quartz.webp",
     "alt": "Gloss cream L-shaped modular kitchen with jet black quartz countertop, sleek chimney hood, and continuous under-cabinet lighting."
   },
   {
@@ -645,7 +645,7 @@ export const galleryItems: GalleryItem[] = [
       "Dual USB-C fast-charging ports integrated flush into workstation surface"
     ],
     "id": "bedroom-guest-overhead-bridge-study",
-    "image": "/gallery/bedroom-guest-overhead-bridge-study.jpg",
+    "image": "/gallery/bedroom-guest-overhead-bridge-study.webp",
     "alt": "Space-optimizing bedroom wardrobe suite featuring overhead bridge cabinets spanning across bed headboard and dedicated workstation."
   },
   {
@@ -666,7 +666,7 @@ export const galleryItems: GalleryItem[] = [
       "Staggered display shelving load capacity certified for art collectibles"
     ],
     "id": "tv-living-bronze-metallic-display-ledges",
-    "image": "/gallery/tv-living-bronze-metallic-display-ledges.jpg",
+    "image": "/gallery/tv-living-bronze-metallic-display-ledges.webp",
     "alt": "Textured metallic bronze feature wall with floating media ledge, fluted vertical open display shelves, chandelier, and ambient lighting."
   },
   {
@@ -687,7 +687,7 @@ export const galleryItems: GalleryItem[] = [
       "Flawless paint and laminate color match across modular and on-site joinery"
     ],
     "id": "wardrobe-passage-overloft-doorway-bridge",
-    "image": "/gallery/wardrobe-passage-overloft-doorway-bridge.jpg",
+    "image": "/gallery/wardrobe-passage-overloft-doorway-bridge.webp",
     "alt": "Overhead seasonal storage loft built seamlessly over bedroom passage doorway with adjacent 4-door wardrobe and black pull handles."
   },
   {
@@ -708,7 +708,7 @@ export const galleryItems: GalleryItem[] = [
       "Waterproofing barrier behind sink splash zone verified before cabinet hang"
     ],
     "id": "kitchen-l-shape-chimney-exhaust-vent",
-    "image": "/gallery/kitchen-l-shape-chimney-exhaust-vent.jpg",
+    "image": "/gallery/kitchen-l-shape-chimney-exhaust-vent.webp",
     "alt": "Detailed inspection of L-shaped kitchen layout showing chimney exhaust duct verticality, granite backsplash return, and upper cabinets."
   },
   {
@@ -729,7 +729,7 @@ export const galleryItems: GalleryItem[] = [
       "Integrated electrical circuit sub-panel access door hidden within loft"
     ],
     "id": "wardrobe-foyer-entrance-door-loft",
-    "image": "/gallery/wardrobe-foyer-entrance-door-loft.jpg",
+    "image": "/gallery/wardrobe-foyer-entrance-door-loft.webp",
     "alt": "Custom overhead bridge storage built over solid main entrance door with matching vertical-handle wardrobe and flush architrave joinery."
   },
   {
@@ -750,7 +750,7 @@ export const galleryItems: GalleryItem[] = [
       "Concealed ventilation cutout above gas water heater zone"
     ],
     "id": "kitchen-window-reveal-high-level-boxing",
-    "image": "/gallery/kitchen-window-reveal-high-level-boxing.jpg",
+    "image": "/gallery/kitchen-window-reveal-high-level-boxing.webp",
     "alt": "High-level modular cabinetry custom-boxed around kitchen window reveal, ensuring maximum storage while preserving daylight."
   },
   {
@@ -771,7 +771,7 @@ export const galleryItems: GalleryItem[] = [
       "Verification of clean, dust-free cabinet interiors before final handover"
     ],
     "id": "audit-kitchen-sink-counter-handover-snag",
-    "image": "/gallery/audit-kitchen-sink-counter-handover-snag.jpg",
+    "image": "/gallery/audit-kitchen-sink-counter-handover-snag.webp",
     "alt": "Post-installation sanitary silicone sealant and countertop leveling audit at sink worktop junction, checking for zero water accumulation."
   },
   {
@@ -792,7 +792,7 @@ export const galleryItems: GalleryItem[] = [
       "Under-mount synchronized drawer runner soft-stop cushioning test"
     ],
     "id": "kitchen-natural-oak-fluted-drawers",
-    "image": "/gallery/kitchen-natural-oak-fluted-drawers.jpg",
+    "image": "/gallery/kitchen-natural-oak-fluted-drawers.webp",
     "alt": "Natural fluted oak wood lower cabinetry paired with polished black granite countertop and reflective vitrified floor tiling."
   },
   {
@@ -813,7 +813,7 @@ export const galleryItems: GalleryItem[] = [
       "Countertop undermount sink clamp torque inspection"
     ],
     "id": "kitchen-sink-mixer-plumbing-alignment",
-    "image": "/gallery/kitchen-sink-mixer-plumbing-alignment.jpg",
+    "image": "/gallery/kitchen-sink-mixer-plumbing-alignment.webp",
     "alt": "Stainless steel undermount sink with high-arc swan neck brass mixer, ceramic tile backsplash, and moisture-resistant base cabinets."
   },
   {
@@ -834,7 +834,7 @@ export const galleryItems: GalleryItem[] = [
       "Surface protective film verified to prevent scuffs during site works"
     ],
     "id": "kitchen-royal-blue-moroccan-tile-active-site",
-    "image": "/gallery/kitchen-royal-blue-moroccan-tile-active-site.jpg",
+    "image": "/gallery/kitchen-royal-blue-moroccan-tile-active-site.webp",
     "alt": "Royal blue modular kitchen base units with intricate hand-painted Moroccan tile backsplash and light oak upper cabinets during active fit-out."
   },
   {
@@ -855,7 +855,7 @@ export const galleryItems: GalleryItem[] = [
       "Primer coat sanded to 400-grit smoothness before final spray lacquer"
     ],
     "id": "audit-paneling-boiserie-mitre-joint-inspection",
-    "image": "/gallery/audit-paneling-boiserie-mitre-joint-inspection.jpg",
+    "image": "/gallery/audit-paneling-boiserie-mitre-joint-inspection.webp",
     "alt": "Forensic audit of French bead wall moldings, verifying tight 45-degree corner mitres, primer coat coverage, and zero hairline cracks."
   },
   {
@@ -876,7 +876,7 @@ export const galleryItems: GalleryItem[] = [
       "Factory edge-tape protective peel test on high-traffic cabinet faces"
     ],
     "id": "audit-kitchen-mint-carcass-leveling-site",
-    "image": "/gallery/audit-kitchen-mint-carcass-leveling-site.jpg",
+    "image": "/gallery/audit-kitchen-mint-carcass-leveling-site.webp",
     "alt": "On-site quality audit during active modular kitchen assembly, inspecting leveling legs, protective film, and carcass junction bolts."
   },
   {
@@ -897,7 +897,7 @@ export const galleryItems: GalleryItem[] = [
       "Wall anchoring brackets fastened into RCC column with anchor bolts"
     ],
     "id": "audit-wardrobe-carcass-internal-framing-assembly",
-    "image": "/gallery/audit-wardrobe-carcass-internal-framing-assembly.jpg",
+    "image": "/gallery/audit-wardrobe-carcass-internal-framing-assembly.webp",
     "alt": "Technical audit of dark grey wardrobe carcass erection on active site, checking internal partition squareness and hardware pre-drilling."
   },
   {
@@ -918,7 +918,7 @@ export const galleryItems: GalleryItem[] = [
       "Floor anchoring bolts pull-out test before stone countertop placement"
     ],
     "id": "audit-kitchen-island-breakfast-bar-in-progress",
-    "image": "/gallery/audit-kitchen-island-breakfast-bar-in-progress.jpg",
+    "image": "/gallery/audit-kitchen-island-breakfast-bar-in-progress.webp",
     "alt": "Active site fit-out of freestanding modular kitchen island and breakfast bar counter, showing carcass bracing and protective foam wrap."
   },
   {
@@ -939,7 +939,7 @@ export const galleryItems: GalleryItem[] = [
       "Wall cabinet load brackets verified against lightweight AAC block wall"
     ],
     "id": "audit-kitchen-l-shape-duct-ac-active-fitout",
-    "image": "/gallery/audit-kitchen-l-shape-duct-ac-active-fitout.jpg",
+    "image": "/gallery/audit-kitchen-l-shape-duct-ac-active-fitout.webp",
     "alt": "Active site inspection of full L-shaped kitchen layout, verifying chimney exhaust boxing, split AC drain slope, and cabinet reveals."
   },
   {
@@ -960,7 +960,7 @@ export const galleryItems: GalleryItem[] = [
       "Pre-cleaning inspection of all drawer slides and hinge mechanisms"
     ],
     "id": "audit-wardrobe-floor-ceiling-protective-wrapping",
-    "image": "/gallery/audit-wardrobe-floor-ceiling-protective-wrapping.jpg",
+    "image": "/gallery/audit-wardrobe-floor-ceiling-protective-wrapping.webp",
     "alt": "Floor-to-ceiling modular wardrobe and adjoining desk unit with full protective plastic wrap and corner guards during site finishing works."
   },
   {
@@ -981,7 +981,7 @@ export const galleryItems: GalleryItem[] = [
       "Top loft door flush alignment spanning full ceiling width"
     ],
     "id": "wardrobe-vanity-tv-combo-alcove-fitout",
-    "image": "/gallery/wardrobe-vanity-tv-combo-alcove-fitout.jpg",
+    "image": "/gallery/wardrobe-vanity-tv-combo-alcove-fitout.webp",
     "alt": "Multi-functional bedroom joinery unit integrating floor-to-ceiling wardrobe, vanity mirror alcove, and TV entertainment drawer ledge."
   },
   {
@@ -1002,7 +1002,7 @@ export const galleryItems: GalleryItem[] = [
       "Dual-point lock mechanism latch engagement and key smoothness"
     ],
     "id": "wardrobe-matte-blush-sliding-curved-niche",
-    "image": "/gallery/wardrobe-matte-blush-sliding-curved-niche.jpg",
+    "image": "/gallery/wardrobe-matte-blush-sliding-curved-niche.webp",
     "alt": "2-door matte blush laminate sliding wardrobe with external open shelving nook for everyday accessories and curved side profile."
   },
   {
@@ -1023,7 +1023,7 @@ export const galleryItems: GalleryItem[] = [
       "Bay window seating base reinforced for 250kg distributed live load"
     ],
     "id": "paneling-fluted-teak-db-box-bay-window",
-    "image": "/gallery/paneling-fluted-teak-db-box-bay-window.jpg",
+    "image": "/gallery/paneling-fluted-teak-db-box-bay-window.webp",
     "alt": "Rich fluted teakwood wall cladding seamlessly concealing electrical distribution board (DB) and switchgear with integrated bay window daybed."
   },
   {
@@ -1044,7 +1044,7 @@ export const galleryItems: GalleryItem[] = [
       "Loft shutter and main door vertical reveal line perfect alignment"
     ],
     "id": "wardrobe-6door-terracotta-accent-panels",
-    "image": "/gallery/wardrobe-6door-terracotta-accent-panels.jpg",
+    "image": "/gallery/wardrobe-6door-terracotta-accent-panels.webp",
     "alt": "Wide 6-door floor-to-ceiling hinged wardrobe with warm terracotta center accent panels and floor-to-loft seamless alignment."
   },
   {
@@ -1065,7 +1065,7 @@ export const galleryItems: GalleryItem[] = [
       "Internal hanging rod deflection test under heavy winter garments"
     ],
     "id": "wardrobe-matte-grey-6door-display-shelf",
-    "image": "/gallery/wardrobe-matte-grey-6door-display-shelf.jpg",
+    "image": "/gallery/wardrobe-matte-grey-6door-display-shelf.webp",
     "alt": "6-door grey matte laminate wardrobe suite with full overhead loft compartments, slim black pull handles, and ceiling fan clearance."
   },
   {
@@ -1086,7 +1086,7 @@ export const galleryItems: GalleryItem[] = [
       "Touch-latch push mechanism calibrated for effortless 1-finger operation"
     ],
     "id": "paneling-statuario-marble-cladding-push-door",
-    "image": "/gallery/paneling-statuario-marble-cladding-push-door.jpg",
+    "image": "/gallery/paneling-statuario-marble-cladding-push-door.webp",
     "alt": "High-gloss bookmatched Italian Statuario marble laminate wall cladding with concealed push-to-open doors and hidden storage compartments."
   },
   {
@@ -1107,7 +1107,7 @@ export const galleryItems: GalleryItem[] = [
       "Zero deflection under 100kg test load on cantilevered stone desktop"
     ],
     "id": "paneling-statuario-marble-study-workstation",
-    "image": "/gallery/paneling-statuario-marble-study-workstation.jpg",
+    "image": "/gallery/paneling-statuario-marble-study-workstation.webp",
     "alt": "Statuario marble laminate feature surround framing a recessed study work alcove with overhead storage cabinetry and integrated task lighting."
   },
   {
@@ -1128,7 +1128,7 @@ export const galleryItems: GalleryItem[] = [
       "Corner floating display ledges anchored with invisible steel dowels"
     ],
     "id": "living-bay-window-study-desk-floating-shelves",
-    "image": "/gallery/living-bay-window-study-desk-floating-shelves.jpg",
+    "image": "/gallery/living-bay-window-study-desk-floating-shelves.webp",
     "alt": "Custom solid wood study table with two-tier floating corner shelving and under-desk drawer pedestal fitted into sunlit window bay."
   },
   {
@@ -1149,7 +1149,7 @@ export const galleryItems: GalleryItem[] = [
       "Final handover dossier and hardware warranty cards delivered to homeowner"
     ],
     "id": "kitchen-sage-full-suite-moroccan-pendant",
-    "image": "/gallery/kitchen-sage-full-suite-moroccan-pendant.jpg",
+    "image": "/gallery/kitchen-sage-full-suite-moroccan-pendant.webp",
     "alt": "Complete handover-ready sage green modular kitchen with hand-painted Moroccan backsplash tile, dedicated refrigerator housing, and pendant lighting."
   },
   {
@@ -1170,7 +1170,7 @@ export const galleryItems: GalleryItem[] = [
       "Final surface inspection with high-intensity detailing lamp"
     ],
     "id": "paneling-marble-curved-display-open-shelving",
-    "image": "/gallery/paneling-marble-curved-display-open-shelving.jpg",
+    "image": "/gallery/paneling-marble-curved-display-open-shelving.webp",
     "alt": "Bookmatched Italian marble laminate feature wall with custom curved multi-tier display shelving unit and floating corner ledges."
   }
 ];

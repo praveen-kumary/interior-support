@@ -19,8 +19,8 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 
-import boqPhoto from "@/assets/boq-verification.jpg";
-import boqMaterialsPhoto from "@/assets/boq-material-specifications.jpg";
+import boqPhoto from "@/assets/boq-verification.webp";
+import boqMaterialsPhoto from "@/assets/boq-material-specifications.webp";
 import { ScrollMotion } from "@/components/scroll-motion";
 import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 import { AnimatedCounter } from "@/components/animated-counter";

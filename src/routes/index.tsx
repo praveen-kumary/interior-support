@@ -12,11 +12,11 @@ import {
   BadgeCheck,
 } from "lucide-react";
 
-import projectSite from "@/assets/interior-project-site.jpg";
-import mepLaserPhoto from "@/assets/mep-laser-inspection.jpg";
-import inspectionPhoto from "@/assets/site-inspection.jpg";
-import boqPhoto from "@/assets/boq-verification.jpg";
-import handoverPhoto from "@/assets/project-handover.jpg";
+import projectSite from "@/assets/interior-project-site.webp";
+import mepLaserPhoto from "@/assets/mep-laser-inspection.webp";
+import inspectionPhoto from "@/assets/site-inspection.webp";
+import boqPhoto from "@/assets/boq-verification.webp";
+import handoverPhoto from "@/assets/project-handover.webp";
 import { ScrollMotion } from "@/components/scroll-motion";
 import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 import { Button } from "@/components/ui/button";

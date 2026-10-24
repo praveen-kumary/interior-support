@@ -20,8 +20,8 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 
-import mepLaserPhoto from "@/assets/mep-laser-inspection.jpg";
-import projectSite from "@/assets/interior-project-site.jpg";
+import mepLaserPhoto from "@/assets/mep-laser-inspection.webp";
+import projectSite from "@/assets/interior-project-site.webp";
 import { ScrollMotion } from "@/components/scroll-motion";
 import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 import { AnimatedCounter } from "@/components/animated-counter";
