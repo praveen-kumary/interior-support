@@ -147,7 +147,7 @@ export function SiteHeader() {
           isScrolled ? "is-scrolled" : ""
         }`}
       >
-        <div className="header-inner max-w-7xl mx-auto flex items-center justify-between">
+        <div className="header-inner flex items-center justify-between">
           <BrandLogo onClick={() => setMenuOpen(false)} />
 
           <nav

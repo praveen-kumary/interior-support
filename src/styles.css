@@ -169,7 +169,9 @@ pre {
    ========================================================================== */
 
 /* ==========================================================================
-   MODERN FLOATING CAPSULE HEADER & ZERO-JITTER LUXURY GLASS TRANSITION
+   MODERN FLOATING CAPSULE HEADER & BUTTER-SMOOTH SCROLL ANIMATION
+   At Top: Normal edge-to-edge transparent header sitting cleanly atop hero.
+   On Scroll: Smoothly morphs down into a sleek, floating luxury glass capsule.
    ========================================================================== */
 
 .site-header {
@@ -180,70 +182,95 @@ pre {
   width: 100%;
   z-index: 50;
   pointer-events: none;
-  padding: 0.65rem 0.85rem;
-  transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-@media (min-width: 640px) {
-  .site-header {
-    padding: 0.75rem 1.25rem;
-  }
-}
-@media (min-width: 1024px) {
-  .site-header {
-    padding: 0.85rem 1.75rem;
-  }
+  background: transparent;
+  padding: 0;
+  transition: padding 360ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Base Header Inner: Floating Frosted Capsule with Stable Geometry */
+/* Base Header Inner (Normal Transparent Top State) */
 .header-inner {
   position: relative;
   width: 100%;
-  max-width: 1240px;
-  min-height: 56px;
+  max-width: 1280px;
+  min-height: 64px;
   margin-inline: auto;
-  padding: 0.45rem 1rem;
+  padding-inline: 1.25rem;
+  padding-block: 0.65rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  border-radius: 9999px;
+  gap: 1.25rem;
+  border-radius: 0;
   pointer-events: auto;
-  background: rgba(14, 13, 11, 0.65);
-  backdrop-filter: blur(16px) saturate(160%);
-  -webkit-backdrop-filter: blur(16px) saturate(160%);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 8px 30px -4px rgba(0, 0, 0, 0.45);
+  background: transparent;
+  border: 1px solid transparent;
+  box-shadow: none;
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  transform: translate3d(0, 0, 0);
   transition:
-    background-color 260ms cubic-bezier(0.16, 1, 0.3, 1),
-    border-color 260ms cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 260ms cubic-bezier(0.16, 1, 0.3, 1),
-    backdrop-filter 260ms cubic-bezier(0.16, 1, 0.3, 1);
+    transform 380ms cubic-bezier(0.16, 1, 0.3, 1),
+    max-width 380ms cubic-bezier(0.16, 1, 0.3, 1),
+    width 380ms cubic-bezier(0.16, 1, 0.3, 1),
+    min-height 380ms cubic-bezier(0.16, 1, 0.3, 1),
+    padding 380ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-radius 380ms cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 340ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 340ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 380ms cubic-bezier(0.16, 1, 0.3, 1),
+    backdrop-filter 340ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, width, max-width, background-color, border-color, box-shadow;
+  backface-visibility: hidden;
 }
 
 @media (min-width: 640px) {
   .header-inner {
-    padding: 0.48rem 1.25rem;
-    min-height: 60px;
+    padding-inline: 1.5rem;
+    min-height: 68px;
   }
 }
 @media (min-width: 1024px) {
   .header-inner {
-    padding: 0.5rem 1.4rem;
-    min-height: 62px;
-    gap: 1.25rem;
+    padding-inline: 2rem;
+    min-height: 70px;
   }
 }
 
-/* Scrolled State: Softly Deepens into Luxury Obsidian Glass Island with Gold Hairline */
+/* Scrolled State: Morphs into a Sleek Floating Glass Capsule Island */
 .site-header.is-scrolled .header-inner {
+  transform: translate3d(0, 10px, 0);
+  max-width: 1200px;
+  width: calc(100% - 2.5rem);
+  min-height: 54px;
+  padding-inline: 1.25rem;
+  padding-block: 0.38rem;
+  border-radius: 9999px;
   background: rgba(12, 11, 9, 0.94);
   backdrop-filter: blur(28px) saturate(190%);
   -webkit-backdrop-filter: blur(28px) saturate(190%);
-  border-color: rgba(197, 168, 128, 0.4);
+  border: 1px solid rgba(197, 168, 128, 0.4);
   box-shadow:
     0 20px 48px -10px rgba(0, 0, 0, 0.92),
     0 1px 0 0 rgba(197, 168, 128, 0.22) inset,
     0 0 24px -4px rgba(197, 168, 128, 0.16);
+}
+
+@media (max-width: 1023px) {
+  .site-header.is-scrolled .header-inner {
+    transform: translate3d(0, 6px, 0);
+    width: calc(100% - 1.25rem);
+    min-height: 48px;
+    padding-inline: 0.85rem;
+    padding-block: 0.3rem;
+    border-radius: 9999px;
+  }
+}
+
+/* Subtle Text Contrast on Transparent Top State */
+.site-header:not(.is-scrolled) .brand,
+.site-header:not(.is-scrolled) .main-nav a,
+.site-header:not(.is-scrolled) .header-actions {
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.85));
 }
 
 .shell-container {
@@ -2331,11 +2358,11 @@ section:hover .section-index span:first-child {
 
 @media (max-width: 680px) {
   .site-header {
-    padding: 0.5rem 0.75rem;
+    padding: 0;
   }
   .header-inner {
-    min-height: 52px;
-    padding: 0.35rem 0.85rem;
+    min-height: 56px;
+    padding: 0.5rem 1rem;
     gap: 0.5rem;
   }
   .main-nav {
