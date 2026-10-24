@@ -160,26 +160,6 @@ export function GalleryPage() {
                 managed, inspected, and verified across Bengaluru. Covering bespoke millwork,
                 modular joinery, and technical milestone audits.
               </p>
-
-              {/* STAT STRIP */}
-              <div className="pt-4 grid grid-cols-2 sm:grid-cols-4 gap-4 border-t border-border/20 text-xs">
-                <div>
-                  <div className="text-xl md:text-2xl font-display font-bold text-gold">55+</div>
-                  <div className="text-primary-foreground/70">Verified Site Updates</div>
-                </div>
-                <div>
-                  <div className="text-xl md:text-2xl font-display font-bold text-gold">4 Micro-Zones</div>
-                  <div className="text-primary-foreground/70">Central, East, South &amp; North</div>
-                </div>
-                <div>
-                  <div className="text-xl md:text-2xl font-display font-bold text-gold">5 Disciplines</div>
-                  <div className="text-primary-foreground/70">Kitchens, Wardrobes, Joinery</div>
-                </div>
-                <div>
-                  <div className="text-xl md:text-2xl font-display font-bold text-gold">Bengaluru</div>
-                  <div className="text-primary-foreground/70">On-Site Governance</div>
-                </div>
-              </div>
             </div>
           </div>
         </section>
@@ -204,7 +184,7 @@ export function GalleryPage() {
                       key={tab.id}
                       type="button"
                       onClick={() => setActiveFilter(tab.id)}
-                      className={`px-3 py-1.5 text-xs font-medium tracking-wide transition-all border flex items-center gap-1.5 ${
+                      className={`px-3 py-1.5 text-xs font-medium tracking-wide transition-all border flex items-center gap-1.5 interactive-pill ${
                         isActive
                           ? "bg-gold text-foreground border-gold font-semibold shadow-xs"
                           : "bg-background text-muted-foreground border-border hover:border-gold hover:text-foreground"

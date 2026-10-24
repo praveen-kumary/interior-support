@@ -292,9 +292,9 @@ function ServicesPage() {
                     className="w-full bg-gold text-[#141311] hover:bg-gold/90 text-xs font-semibold py-2.5 h-10 shadow-xs justify-between group-hover:translate-x-0.5 transition-all"
                     asChild
                   >
-                    <Link to={svc.dedicatedUrl}>
-                      <span>Explore In-Depth Scope &amp; Deliverables</span>
-                      <ArrowRight className="w-4 h-4 ml-2" />
+                    <Link to={svc.dedicatedUrl} className="flex items-center justify-between w-full">
+                      <span className="truncate">Explore Dedicated Scope</span>
+                      <ArrowRight className="w-4 h-4 ml-2 shrink-0 arrow-spring" />
                     </Link>
                   </Button>
                 </div>

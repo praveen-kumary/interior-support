@@ -460,15 +460,15 @@ export function PricingPage() {
                       onChange={(e) => setCalculatorArea(Number(e.target.value))}
                       className="w-full accent-gold cursor-pointer"
                     />
-                    <div className="flex justify-between text-[0.68rem] text-muted-foreground mt-1">
-                      <span>600 sq ft (Studio/1BHK)</span>
-                      <span>3,500 sq ft (Large Apt)</span>
-                      <span>10,000+ sq ft (Commercial/Villa)</span>
+                    <div className="flex flex-wrap justify-between gap-1 text-[0.68rem] text-muted-foreground mt-1">
+                      <span>600 sq ft (Studio)</span>
+                      <span className="hidden sm:inline">3,500 sq ft (Large Apt)</span>
+                      <span>10,000+ sq ft (Villa)</span>
                     </div>
                   </div>
                 </div>
 
-                <div className="md:col-span-5 bg-background p-6 border border-border/80 text-left space-y-4 shadow-xs">
+                <div className="md:col-span-5 bg-background p-5 sm:p-6 border border-border/80 text-left space-y-4 shadow-xs">
                   <div>
                     <span className="text-[0.66rem] uppercase font-semibold text-gold tracking-widest block mb-1">
                       {estimate.tier}
@@ -480,15 +480,15 @@ export function PricingPage() {
                   </div>
 
                   <div className="pt-3 border-t border-border/60 space-y-2 text-xs">
-                    <div className="flex justify-between items-center text-muted-foreground">
+                    <div className="flex flex-col sm:flex-row sm:justify-between items-start sm:items-center gap-0.5 text-muted-foreground">
                       <span>Est. Turnkey Fit-Out Value:</span>
                       <strong className="text-foreground font-mono">{estimate.estFitout}</strong>
                     </div>
-                    <div className="flex justify-between items-center text-muted-foreground">
+                    <div className="flex flex-col sm:flex-row sm:justify-between items-start sm:items-center gap-0.5 text-muted-foreground">
                       <span>Typical Project Duration:</span>
                       <span className="text-foreground">{estimate.timeline}</span>
                     </div>
-                    <div className="flex justify-between items-center text-emerald-600 bg-emerald-500/10 p-1.5 border border-emerald-500/20 text-[0.72rem]">
+                    <div className="flex flex-col sm:flex-row sm:justify-between items-start sm:items-center gap-1 text-emerald-600 bg-emerald-500/10 p-2 border border-emerald-500/20 text-[0.72rem]">
                       <span>Est. Overbilling/Leakage Prevented:</span>
                       <strong className="font-mono">{estimate.leakagePrevented}</strong>
                     </div>

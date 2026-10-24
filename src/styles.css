@@ -129,9 +129,18 @@ body,
 main,
 header,
 footer,
-section {
-  max-width: 100vw;
+section,
+.page-shell {
+  max-width: 100%;
   box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  overflow-x: clip;
+  width: 100%;
+  max-width: 100%;
 }
 
 .overflow-x-auto,
@@ -557,16 +566,27 @@ pre {
 /* Card Luxury Elevation Hover */
 .premium-card-hover {
   transition:
-    transform 280ms cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 280ms cubic-bezier(0.16, 1, 0.3, 1),
-    border-color 280ms cubic-bezier(0.16, 1, 0.3, 1);
+    transform 320ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 320ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 320ms cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 320ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, box-shadow;
+  backface-visibility: hidden;
 }
 .premium-card-hover:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
   border-color: rgba(197, 168, 128, 0.55);
   box-shadow:
-    0 16px 32px -12px rgba(0, 0, 0, 0.4),
-    0 0 24px -8px rgba(197, 168, 128, 0.22);
+    0 20px 40px -15px rgba(0, 0, 0, 0.45),
+    0 0 24px -6px rgba(197, 168, 128, 0.2),
+    0 1px 0 0 rgba(255, 255, 255, 0.08) inset;
+}
+.premium-card-hover img {
+  transition: transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+.premium-card-hover:hover img {
+  transform: scale(1.028);
 }
 
 .hero {
@@ -2016,18 +2036,64 @@ pre {
   display: inline-flex;
 }
 
+/* ==========================================================================
+   PREMIUM MICRO-ANIMATIONS & SCROLL REVEAL MOTION SUITE
+   ========================================================================== */
+
 .motion-ready [data-reveal] {
   opacity: 0;
-  transform: translate3d(0, 24px, 0);
+  transform: translate3d(0, 18px, 0);
   will-change: opacity, transform;
   backface-visibility: hidden;
   transition:
-    opacity 640ms cubic-bezier(0.16, 1, 0.3, 1),
-    transform 640ms cubic-bezier(0.16, 1, 0.3, 1);
+    opacity 600ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 .motion-ready [data-reveal][data-revealed="true"] {
   opacity: 1;
   transform: translate3d(0, 0, 0);
+}
+
+/* Directional & Scale Reveal Variants */
+.motion-ready [data-reveal="zoom"] {
+  transform: scale(0.97) translate3d(0, 12px, 0);
+}
+.motion-ready [data-reveal="zoom"][data-revealed="true"] {
+  transform: scale(1) translate3d(0, 0, 0);
+}
+.motion-ready [data-reveal="left"] {
+  transform: translate3d(-20px, 0, 0);
+}
+.motion-ready [data-reveal="left"][data-revealed="true"] {
+  transform: translate3d(0, 0, 0);
+}
+.motion-ready [data-reveal="right"] {
+  transform: translate3d(20px, 0, 0);
+}
+.motion-ready [data-reveal="right"][data-revealed="true"] {
+  transform: translate3d(0, 0, 0);
+}
+
+/* Cascade Stagger Delays for Fluid Sequential Entrances */
+.motion-ready [data-reveal-delay="100"],
+.motion-ready [data-delay="1"] {
+  transition-delay: 80ms;
+}
+.motion-ready [data-reveal-delay="200"],
+.motion-ready [data-delay="2"] {
+  transition-delay: 160ms;
+}
+.motion-ready [data-reveal-delay="300"],
+.motion-ready [data-delay="3"] {
+  transition-delay: 240ms;
+}
+.motion-ready [data-reveal-delay="400"],
+.motion-ready [data-delay="4"] {
+  transition-delay: 320ms;
+}
+.motion-ready [data-reveal-delay="500"],
+.motion-ready [data-delay="5"] {
+  transition-delay: 400ms;
 }
 
 /* Luxury Sheen Micro-interaction on Gold CTAs */
@@ -2035,32 +2101,132 @@ pre {
   0% {
     transform: translateX(-160%) skewX(-20deg);
   }
-  30%,
+  25%,
   100% {
     transform: translateX(260%) skewX(-20deg);
   }
 }
 .header-cta-shimmer,
+.hero-button,
+.header-cta,
 .btn-gold-sheen {
   position: relative;
   overflow: hidden;
+  transition:
+    transform 220ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 220ms cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 200ms ease;
 }
 .header-cta-shimmer::after,
+.hero-button::after,
+.header-cta::after,
 .btn-gold-sheen::after {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
-  width: 50%;
+  width: 45%;
   height: 100%;
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(255, 255, 255, 0.32) 50%,
+    rgba(255, 255, 255, 0.35) 50%,
     transparent 100%
   );
-  animation: luxurySheen 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  animation: luxurySheen 6.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   pointer-events: none;
+}
+.hero-button:hover,
+.btn-gold-sheen:hover {
+  transform: translateY(-1.5px);
+  box-shadow: 0 8px 24px -4px rgba(197, 168, 128, 0.45);
+}
+.hero-button:active,
+.header-cta:active,
+.btn-gold-sheen:active {
+  transform: scale(0.975);
+}
+
+/* Interactive Arrow Icon Spring Animation */
+.arrow-spring {
+  transition: transform 260ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform;
+}
+.group:hover .arrow-spring,
+a:hover .arrow-spring,
+button:hover .arrow-spring {
+  transform: translateX(4px);
+}
+.arrow-spring-down {
+  transition: transform 260ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform;
+}
+.group:hover .arrow-spring-down,
+a:hover .arrow-spring-down {
+  transform: translate(3px, 3px);
+}
+
+/* Atmospheric Ambient Breathing Glow */
+@keyframes ambientBreathe {
+  0% {
+    transform: scale(1) translate3d(0, 0, 0);
+    opacity: 0.18;
+  }
+  50% {
+    transform: scale(1.08) translate3d(0, -6px, 0);
+    opacity: 0.28;
+  }
+  100% {
+    transform: scale(1) translate3d(0, 0, 0);
+    opacity: 0.18;
+  }
+}
+.ambient-glow-breathe {
+  animation: ambientBreathe 11s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+/* Live Presence Pulse Radar Ping */
+@keyframes liveRadarPing {
+  0% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+  75%,
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+.live-pulse-ring {
+  animation: liveRadarPing 2.4s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Interactive Pill & Category Tab Spring */
+.interactive-pill {
+  transition:
+    transform 220ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 220ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 200ms ease,
+    background-color 200ms ease;
+  will-change: transform;
+}
+.interactive-pill:hover {
+  transform: translateY(-1.5px);
+  border-color: rgba(197, 168, 128, 0.65) !important;
+  box-shadow: 0 4px 14px -2px rgba(197, 168, 128, 0.2);
+}
+.interactive-pill:active {
+  transform: scale(0.97);
+}
+
+/* Monospace Section Number Glow */
+.section-index span:first-child {
+  transition: text-shadow 280ms ease, color 280ms ease;
+}
+section:hover .section-index span:first-child {
+  color: var(--gold);
+  text-shadow: 0 0 12px rgba(197, 168, 128, 0.45);
 }
 
 /* Ambient Card Hover Illumination */
@@ -2069,6 +2235,7 @@ pre {
     transform 320ms cubic-bezier(0.16, 1, 0.3, 1),
     box-shadow 320ms cubic-bezier(0.16, 1, 0.3, 1),
     border-color 320ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, box-shadow;
 }
 .ambient-card-glow:hover {
   transform: translateY(-4px);
@@ -2077,6 +2244,36 @@ pre {
     0 20px 40px -15px rgba(0, 0, 0, 0.5),
     0 0 24px -4px rgba(197, 168, 128, 0.2),
     0 1px 0 0 rgba(255, 255, 255, 0.08) inset !important;
+}
+
+/* Reduced Motion Accessibility Guard */
+@media (prefers-reduced-motion: reduce) {
+  .motion-ready [data-reveal],
+  .motion-ready [data-reveal][data-revealed="true"],
+  .motion-ready [data-reveal="zoom"],
+  .motion-ready [data-reveal="zoom"][data-revealed="true"],
+  .motion-ready [data-reveal="left"],
+  .motion-ready [data-reveal="left"][data-revealed="true"],
+  .motion-ready [data-reveal="right"],
+  .motion-ready [data-reveal="right"][data-revealed="true"] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .ambient-glow-breathe,
+  .live-pulse-ring,
+  .hero-button::after,
+  .header-cta::after,
+  .btn-gold-sheen::after {
+    animation: none !important;
+  }
+  .premium-card-hover:hover,
+  .ambient-card-glow:hover,
+  .hero-button:hover,
+  .btn-gold-sheen:hover,
+  .interactive-pill:hover {
+    transform: none !important;
+  }
 }
 
 @keyframes hero-arrive {
@@ -2096,23 +2293,6 @@ pre {
   }
   .mobile-menu-toggle {
     display: inline-flex !important;
-  }
-  .mobile-nav:not([hidden]),
-  .mobile-nav.is-open {
-    position: fixed;
-    top: 68px;
-    left: 0;
-    right: 0;
-    max-height: calc(100svh - 68px);
-    overflow-y: auto;
-    z-index: 99;
-    display: block;
-    background: rgba(14, 13, 11, 0.98);
-    backdrop-filter: blur(28px) saturate(180%);
-    -webkit-backdrop-filter: blur(28px) saturate(180%);
-    border-bottom: 1px solid rgba(197, 168, 128, 0.35);
-    box-shadow: 0 24px 48px -10px rgba(0, 0, 0, 0.95);
-    pointer-events: auto;
   }
 }
 

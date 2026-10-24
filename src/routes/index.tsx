@@ -17,6 +17,7 @@ import mepLaserPhoto from "@/assets/mep-laser-inspection.webp";
 import inspectionPhoto from "@/assets/site-inspection.webp";
 import boqPhoto from "@/assets/boq-verification.webp";
 import handoverPhoto from "@/assets/project-handover.webp";
+import { AnimatedCounter } from "@/components/animated-counter";
 import { ScrollMotion } from "@/components/scroll-motion";
 import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 import { Button } from "@/components/ui/button";
@@ -170,14 +171,17 @@ const auditStages = [
 ];
 
 const auditMetrics = [
-  { value: "120+", label: "Audit Checkpoints", sub: "Verified across all trades on site" },
-  { value: "0%", label: "Contractor Kickbacks", sub: "Strict fiduciary client representation" },
+  { numericValue: 120, suffix: "+", label: "Audit Checkpoints", sub: "Verified across all trades on site" },
+  { numericValue: 0, suffix: "%", label: "Contractor Kickbacks", sub: "Strict fiduciary client representation" },
   {
-    value: "±1.5mm",
+    prefix: "±",
+    numericValue: 1.5,
+    suffix: "mm",
+    decimals: 1,
     label: "Max Allowable Tolerance",
     sub: "Sub-millimeter joinery & level standards",
   },
-  { value: "100%", label: "Defect Rectification", sub: "No payments approved until snags close" },
+  { numericValue: 100, suffix: "%", label: "Defect Rectification", sub: "No payments approved until snags close" },
 ];
 
 export const Route = createFileRoute("/")({
@@ -295,8 +299,11 @@ function HomePage() {
           <div className="hero-shade" aria-hidden="true" />
 
           <div className="hero-inner" id="main-content" data-reveal>
-            <p className="hero-eyebrow">
-              <span aria-hidden="true" />
+            <p className="hero-eyebrow flex items-center gap-2">
+              <span className="relative flex h-2 w-2" aria-hidden="true">
+                <span className="live-pulse-ring absolute inline-flex h-full w-full rounded-full bg-gold opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-gold" />
+              </span>
               Independent Interior Project Management
             </p>
 
@@ -313,16 +320,16 @@ function HomePage() {
             </p>
 
             <div className="hero-actions">
-              <Button className="hero-button" asChild>
+              <Button className="hero-button group" asChild>
                 <Link to="/contact">
-                  Book a site consultation{" "}
-                  <ArrowRight className="w-4 h-4 ml-1.5" aria-hidden="true" />
+                  <span>Book a site consultation</span>
+                  <ArrowRight className="w-4 h-4 ml-1.5 arrow-spring" aria-hidden="true" />
                 </Link>
               </Button>
-              <Button className="hero-button-secondary" asChild>
+              <Button className="hero-button-secondary group" asChild>
                 <Link to="/services">
-                  Explore our disciplines{" "}
-                  <ArrowDownRight className="w-4 h-4 ml-1.5 text-gold" aria-hidden="true" />
+                  <span>Explore our disciplines</span>
+                  <ArrowDownRight className="w-4 h-4 ml-1.5 text-gold arrow-spring-down" aria-hidden="true" />
                 </Link>
               </Button>
             </div>
@@ -332,10 +339,13 @@ function HomePage() {
               {pillars.map((pillar) => {
                 const Icon = pillar.icon;
                 return (
-                  <div key={pillar.title} className="flex items-start gap-3">
-                    <Icon className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
+                  <div
+                    key={pillar.title}
+                    className="flex items-start gap-3 p-2 rounded-xs hover:bg-white/[0.04] transition-all duration-300 group cursor-default"
+                  >
+                    <Icon className="w-5 h-5 text-gold flex-shrink-0 mt-0.5 group-hover:scale-110 group-hover:text-gold transition-all duration-300" />
                     <div>
-                      <h4 className="text-xs font-semibold text-primary-foreground font-display tracking-wide">
+                      <h4 className="text-xs font-semibold text-primary-foreground font-display tracking-wide group-hover:text-gold transition-colors duration-200">
                         {pillar.title}
                       </h4>
                       <p className="text-[0.72rem] text-muted-foreground mt-0.5 leading-snug">
@@ -478,11 +488,13 @@ function HomePage() {
           </div>
 
           <div className="services-grid">
-            {services.map((service) => (
+            {services.map((service, idx) => (
               <Link
                 key={service.number}
                 to={service.dedicatedUrl}
-                className="service-item group relative bg-card/60 p-4 border border-border/60 hover:border-gold/70 transition-all duration-300 shadow-sm hover:shadow-md block cursor-pointer flex flex-col justify-between"
+                data-reveal
+                data-reveal-delay={(idx + 1) * 100}
+                className="service-item group relative bg-card/60 p-4 border border-border/60 hover:border-gold/70 transition-all duration-300 shadow-sm hover:shadow-md block cursor-pointer flex flex-col justify-between premium-card-hover"
               >
                 <div>
                   <div className="service-image overflow-hidden aspect-[1.45] relative">
@@ -494,7 +506,7 @@ function HomePage() {
                       loading="lazy"
                       className="transition-transform duration-700 group-hover:scale-105"
                     />
-                    <span className="service-number font-display font-semibold">
+                    <span className="service-number font-display font-semibold group-hover:text-gold transition-colors">
                       {service.number}
                     </span>
                     <div className="absolute bottom-2 right-2 px-2.5 py-1 bg-foreground/80 backdrop-blur-sm text-gold text-[0.62rem] font-medium tracking-wider uppercase border border-gold/30">
@@ -524,7 +536,7 @@ function HomePage() {
                 <div className="mt-4 pt-3 border-t border-border/40 flex items-center justify-between">
                   <span className="text-xs font-semibold text-foreground group-hover:text-gold inline-flex items-center gap-1.5 transition-colors">
                     Explore Dedicated Page{" "}
-                    <ArrowRight className="w-3.5 h-3.5 text-gold group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-3.5 h-3.5 text-gold arrow-spring" />
                   </span>
                   <span className="text-[0.66rem] text-muted-foreground font-mono">
                     0{service.number} / 04
@@ -569,14 +581,18 @@ function HomePage() {
 
             {/* 4-Stage Governance Cards Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-              {auditStages.map((stage) => (
+              {auditStages.map((stage, idx) => (
                 <div
                   key={stage.step}
-                  className="bg-card/70 border border-border/70 hover:border-gold/60 transition-all duration-300 p-5 rounded-xs flex flex-col justify-between shadow-xs hover:shadow-md group"
+                  data-reveal
+                  data-reveal-delay={(idx + 1) * 100}
+                  className="bg-card/70 border border-border/70 hover:border-gold/60 transition-all duration-300 p-5 rounded-xs flex flex-col justify-between shadow-xs hover:shadow-md group premium-card-hover"
                 >
                   <div>
                     <div className="flex items-center justify-between pb-3 border-b border-border/40">
-                      <span className="text-gold font-display font-bold text-lg">{stage.step}</span>
+                      <span className="text-gold font-display font-bold text-lg group-hover:scale-105 transition-transform inline-block">
+                        {stage.step}
+                      </span>
                       <span className="text-[0.62rem] font-mono tracking-wider text-muted-foreground uppercase">
                         {stage.timeline}
                       </span>
@@ -595,7 +611,7 @@ function HomePage() {
                           key={chk}
                           className="flex items-start gap-1.5 text-[0.68rem] text-muted-foreground"
                         >
-                          <CheckCircle2 className="w-3 h-3 text-gold flex-shrink-0 mt-0.5" />
+                          <CheckCircle2 className="w-3 h-3 text-gold flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                           <span>{chk}</span>
                         </div>
                       ))}
@@ -614,12 +630,18 @@ function HomePage() {
               ))}
             </div>
 
-            {/* Field Assurance Metrics Strip */}
-            <div className="mt-8 p-6 bg-card border border-border/80 rounded-xs grid grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Field Assurance Metrics Strip with Animated Counter on scroll */}
+            <div className="mt-8 p-6 bg-card border border-border/80 rounded-xs grid grid-cols-2 lg:grid-cols-4 gap-6 ambient-card-glow">
               {auditMetrics.map((metric) => (
-                <div key={metric.label} className="border-l-2 border-gold/60 pl-4">
-                  <div className="text-2xl sm:text-3xl font-display font-bold text-foreground">
-                    {metric.value}
+                <div key={metric.label} className="border-l-2 border-gold/60 pl-4 group">
+                  <div className="text-2xl sm:text-3xl font-display font-bold text-foreground group-hover:text-gold transition-colors">
+                    {metric.prefix}
+                    <AnimatedCounter
+                      value={metric.numericValue}
+                      suffix={metric.suffix}
+                      decimals={metric.decimals || 0}
+                      duration={1400}
+                    />
                   </div>
                   <div className="text-xs font-semibold text-gold uppercase tracking-wider mt-0.5">
                     {metric.label}
