@@ -21,7 +21,6 @@ export const Route = createFileRoute("/get-a-quote")({
   component: GetAQuotePage,
   head: () => ({
     meta: [
-      { title: "Get a Quote | Interior Support" },
       {
         title: "Get an Interior Project Management Quote Bangalore | Interior Support",
       },

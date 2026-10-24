@@ -20,7 +20,6 @@ export const Route = createFileRoute("/pricing")({
   component: PricingPage,
   head: () => ({
     meta: [
-      { title: "Service Pricing & Quotation Template | Interior Support" },
       {
         title:
           "Interior Project Management Pricing Bangalore | Transparent Retainers | Interior Support",

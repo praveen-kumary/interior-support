@@ -1,0 +1,21 @@
+{
+  "name": "Interior Support — Independent Interior Project Management",
+  "short_name": "Interior Support",
+  "description": "Fiduciary Client-Side Interior Project Management, Site Inspection & BOQ Verification in Bengaluru.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#141311",
+  "theme_color": "#C9A84C",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

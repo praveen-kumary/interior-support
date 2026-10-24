@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as SplatRouteImport } from './routes/$'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as AboutUsRouteImport } from './routes/about-us'
 import { Route as BlogRouteImport } from './routes/blog'
@@ -19,6 +20,7 @@ import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as GetAQuoteRouteImport } from './routes/get-a-quote'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as SitemapRouteImport } from './routes/sitemap'
 import { Route as BlogSlugRouteImport } from './routes/blog_.$slug'
 import { Route as ServicesBoqExecutionVerificationRouteImport } from './routes/services_.boq-execution-verification'
 import { Route as ServicesHandoverPostSaleSupportRouteImport } from './routes/services_.handover-post-sale-support'
@@ -28,6 +30,11 @@ import { Route as ServicesSiteInspectionQualityControlRouteImport } from './rout
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SplatRoute = SplatRouteImport.update({
+  id: '/$',
+  path: '/$',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -75,6 +82,11 @@ const ServicesRoute = ServicesRouteImport.update({
   path: '/services',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SitemapRoute = SitemapRouteImport.update({
+  id: '/sitemap',
+  path: '/sitemap',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
   id: '/blog_/$slug',
   path: '/blog/$slug',
@@ -107,6 +119,7 @@ const ServicesSiteInspectionQualityControlRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/$': typeof SplatRoute
   '/about': typeof AboutRoute
   '/about-us': typeof AboutUsRoute
   '/blog': typeof BlogRoute
@@ -116,6 +129,7 @@ export interface FileRoutesByFullPath {
   '/get-a-quote': typeof GetAQuoteRoute
   '/pricing': typeof PricingRoute
   '/services': typeof ServicesRoute
+  '/sitemap': typeof SitemapRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/services/boq-execution-verification': typeof ServicesBoqExecutionVerificationRoute
   '/services/handover-post-sale-support': typeof ServicesHandoverPostSaleSupportRoute
@@ -124,6 +138,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/$': typeof SplatRoute
   '/about': typeof AboutRoute
   '/about-us': typeof AboutUsRoute
   '/blog': typeof BlogRoute
@@ -133,6 +148,7 @@ export interface FileRoutesByTo {
   '/get-a-quote': typeof GetAQuoteRoute
   '/pricing': typeof PricingRoute
   '/services': typeof ServicesRoute
+  '/sitemap': typeof SitemapRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/services/boq-execution-verification': typeof ServicesBoqExecutionVerificationRoute
   '/services/handover-post-sale-support': typeof ServicesHandoverPostSaleSupportRoute
@@ -142,6 +158,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/$': typeof SplatRoute
   '/about': typeof AboutRoute
   '/about-us': typeof AboutUsRoute
   '/blog': typeof BlogRoute
@@ -151,6 +168,7 @@ export interface FileRoutesById {
   '/get-a-quote': typeof GetAQuoteRoute
   '/pricing': typeof PricingRoute
   '/services': typeof ServicesRoute
+  '/sitemap': typeof SitemapRoute
   '/blog_/$slug': typeof BlogSlugRoute
   '/services_/boq-execution-verification': typeof ServicesBoqExecutionVerificationRoute
   '/services_/handover-post-sale-support': typeof ServicesHandoverPostSaleSupportRoute
@@ -161,6 +179,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/$'
     | '/about'
     | '/about-us'
     | '/blog'
@@ -170,6 +189,7 @@ export interface FileRouteTypes {
     | '/get-a-quote'
     | '/pricing'
     | '/services'
+    | '/sitemap'
     | '/blog/$slug'
     | '/services/boq-execution-verification'
     | '/services/handover-post-sale-support'
@@ -178,6 +198,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/$'
     | '/about'
     | '/about-us'
     | '/blog'
@@ -187,6 +208,7 @@ export interface FileRouteTypes {
     | '/get-a-quote'
     | '/pricing'
     | '/services'
+    | '/sitemap'
     | '/blog/$slug'
     | '/services/boq-execution-verification'
     | '/services/handover-post-sale-support'
@@ -195,6 +217,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/$'
     | '/about'
     | '/about-us'
     | '/blog'
@@ -204,6 +227,7 @@ export interface FileRouteTypes {
     | '/get-a-quote'
     | '/pricing'
     | '/services'
+    | '/sitemap'
     | '/blog_/$slug'
     | '/services_/boq-execution-verification'
     | '/services_/handover-post-sale-support'
@@ -213,6 +237,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  SplatRoute: typeof SplatRoute
   AboutRoute: typeof AboutRoute
   AboutUsRoute: typeof AboutUsRoute
   BlogRoute: typeof BlogRoute
@@ -222,6 +247,7 @@ export interface RootRouteChildren {
   GetAQuoteRoute: typeof GetAQuoteRoute
   PricingRoute: typeof PricingRoute
   ServicesRoute: typeof ServicesRoute
+  SitemapRoute: typeof SitemapRoute
   BlogSlugRoute: typeof BlogSlugRoute
   ServicesBoqExecutionVerificationRoute: typeof ServicesBoqExecutionVerificationRoute
   ServicesHandoverPostSaleSupportRoute: typeof ServicesHandoverPostSaleSupportRoute
@@ -236,6 +262,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/$': {
+      id: '/$'
+      path: '/$'
+      fullPath: '/$'
+      preLoaderRoute: typeof SplatRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -301,6 +334,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sitemap': {
+      id: '/sitemap'
+      path: '/sitemap'
+      fullPath: '/sitemap'
+      preLoaderRoute: typeof SitemapRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog_/$slug': {
       id: '/blog_/$slug'
       path: '/blog/$slug'
@@ -341,6 +381,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  SplatRoute: SplatRoute,
   AboutRoute: AboutRoute,
   AboutUsRoute: AboutUsRoute,
   BlogRoute: BlogRoute,
@@ -350,6 +391,7 @@ const rootRouteChildren: RootRouteChildren = {
   GetAQuoteRoute: GetAQuoteRoute,
   PricingRoute: PricingRoute,
   ServicesRoute: ServicesRoute,
+  SitemapRoute: SitemapRoute,
   BlogSlugRoute: BlogSlugRoute,
   ServicesBoqExecutionVerificationRoute: ServicesBoqExecutionVerificationRoute,
   ServicesHandoverPostSaleSupportRoute: ServicesHandoverPostSaleSupportRoute,

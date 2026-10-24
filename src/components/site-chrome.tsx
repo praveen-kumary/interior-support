@@ -451,6 +451,12 @@ export function SiteFooter() {
               >
                 Contact Us
               </Link>
+              <Link
+                to="/sitemap"
+                className="hover:text-gold hover:translate-x-0.5 transition-all"
+              >
+                Site Index &amp; Map
+              </Link>
             </nav>
           </div>
 
