@@ -1172,5 +1172,131 @@ export const galleryItems: GalleryItem[] = [
     "id": "paneling-marble-curved-display-open-shelving",
     "image": "/gallery/paneling-marble-curved-display-open-shelving.webp",
     "alt": "Bookmatched Italian marble laminate feature wall with custom curved multi-tier display shelving unit and floating corner ledges."
+  },
+  {
+    "idx": 56,
+    "orig": "site-audit-prestige-golfshire-villa.jpeg",
+    "slug": "prestige-golfshire-luxury-villa-audit",
+    "title": "Prestige Golfshire Luxury Villa Fit-Out Audit",
+    "category": "site-quality-audits",
+    "categoryLabel": "Site Quality Audits",
+    "type": "5BHK Signature Golf Villa",
+    "location": "Nandi Hills Road, Bengaluru North",
+    "area": "6,800 sq. ft.",
+    "stage": "MEP Ceiling Ducting & Italian Marble Levelling Audit",
+    "caption": "Comprehensive client-side fiduciary quality audit for luxury golf villa covering MEP ceiling ducting laser calibration, bookmatched Statuario marble levelling, and acoustic isolation.",
+    "highlights": [
+      "Sub-millimeter laser plumb and screed level verification across 6,800 sq. ft.",
+      "Pre-closure 10-bar hydrostatic pressure audit on concealed plumbing lines",
+      "Bookmatched Italian marble dry-lay vein inspection before adhesive bonding"
+    ],
+    "id": "prestige-golfshire-luxury-villa-audit",
+    "image": "/gallery/img-01.webp",
+    "alt": "Prestige Golfshire luxury villa fit-out audit with precision laser leveling and MEP verification."
+  },
+  {
+    "idx": 57,
+    "orig": "site-audit-brigade-gateway-penthouse.jpeg",
+    "slug": "brigade-gateway-penthouse-joinery-paneling",
+    "title": "Brigade Gateway Penthouse Joinery & Paneling",
+    "category": "wall-paneling-joinery",
+    "categoryLabel": "Wall Paneling & Joinery",
+    "type": "Duplex Penthouse Suite",
+    "location": "Rajajinagar, Bengaluru",
+    "area": "4,500 sq. ft.",
+    "stage": "Full-Height Boiserie & Acoustic Paneling Sign-Off",
+    "caption": "Floor-to-ceiling smoked oak boiserie wall paneling with acoustic insulation, brass reveal shadow gaps, and concealed pivot door integration.",
+    "highlights": [
+      "Mitre joint alignment tolerance verified within +/-0.5mm on all wall panels",
+      "Concealed pivot hinge weight-bearing test (120kg door assembly)",
+      "Acoustic rockwool cavity density and fire-retardant backing audit"
+    ],
+    "id": "brigade-gateway-penthouse-joinery-paneling",
+    "image": "/gallery/img-02.webp",
+    "alt": "Brigade Gateway penthouse smoked oak boiserie wall paneling with brass shadow gaps and acoustic drop seals."
+  },
+  {
+    "idx": 58,
+    "orig": "site-audit-embassy-tech-village-office.jpeg",
+    "slug": "embassy-tech-village-commercial-office",
+    "title": "Embassy Tech Village Commercial Office Interiors",
+    "category": "site-quality-audits",
+    "categoryLabel": "Site Quality Audits",
+    "type": "Enterprise Tech Workspace",
+    "location": "Outer Ring Road, Bengaluru",
+    "area": "18,500 sq. ft.",
+    "stage": "Fast-Track MEP, HVAC & Modular Desk Grid Audit",
+    "caption": "Independent fiduciary oversight for fast-track enterprise workplace interior fit-out, verifying chilled water HVAC ducting, raised floor plenum, and fire suppression compliance.",
+    "highlights": [
+      "Airflow balancing and thermal camera audit across all open plenum ceiling zones",
+      "Modular workstation cable management and dual-circuit UPS power verification",
+      "NBC 2016 fire sprinkler coverage radius and smoke damper functional testing"
+    ],
+    "id": "embassy-tech-village-commercial-office",
+    "image": "/gallery/img-03.webp",
+    "alt": "Embassy Tech Village commercial office interior audit with HVAC ducting and modular workstation grid inspection."
+  },
+  {
+    "idx": 59,
+    "orig": "site-audit-sobha-lifestyle-presidential.jpeg",
+    "slug": "sobha-lifestyle-presidential-residence",
+    "title": "Sobha Lifestyle Presidential Residence Kitchen",
+    "category": "modular-kitchens",
+    "categoryLabel": "Modular Kitchens",
+    "type": "Presidential Villa",
+    "location": "Devanahalli, Bengaluru",
+    "area": "7,200 sq. ft.",
+    "stage": "German Modular Kitchen & Quartz Island Handover",
+    "caption": "Bespoke German modular kitchen execution featuring handleless matte lacquer cabinetry, 3.2m seamless quartz waterfall island, and built-in Miele appliances.",
+    "highlights": [
+      "Zero-lip waterfall edge mitre inspection on 3.2m monolithic quartz island",
+      "Waterproof PU edge-banding laser audit on BWP marine-grade carcass panels",
+      "Appliance cavity ventilation clearance verified to manufacturer specifications"
+    ],
+    "id": "sobha-lifestyle-presidential-residence",
+    "image": "/gallery/img-04.webp",
+    "alt": "Sobha Lifestyle Presidential Residence German modular kitchen with seamless quartz island."
+  },
+  {
+    "idx": 60,
+    "orig": "site-audit-total-environment-windmills.jpeg",
+    "slug": "total-environment-windmills-duplex",
+    "title": "Total Environment Windmills Duplex Renovation",
+    "category": "living-tv-units",
+    "categoryLabel": "TV & Living Consoles",
+    "type": "Earth-Sheltered Duplex Residence",
+    "location": "Whitefield, Bengaluru",
+    "area": "5,100 sq. ft.",
+    "stage": "Exposed Wire-Cut Brick & Teak Millwork Integration",
+    "caption": "Custom natural teak living room console and cantilevered shelving integrated into exposed wire-cut brickwork with concealed warm lighting channels.",
+    "highlights": [
+      "Anchoring load certification for 4-meter cantilevered solid teak console",
+      "Concealed 4K 120Hz HDMI and optical audio conduit routing inspection",
+      "Hand-rubbed natural oil finish verification for zero VOC emissions"
+    ],
+    "id": "total-environment-windmills-duplex",
+    "image": "/gallery/img-05.webp",
+    "alt": "Total Environment Windmills duplex natural teak living console with concealed warm LED channels."
+  },
+  {
+    "idx": 61,
+    "orig": "site-audit-salarpuria-sattva-magnolia.jpeg",
+    "slug": "salarpuria-sattva-magnolia-wardrobes",
+    "title": "Salarpuria Sattva Magnolia Contemporary Flat",
+    "category": "wardrobes-storage",
+    "categoryLabel": "Wardrobes & Storage",
+    "type": "4BHK Luxury Apartment",
+    "location": "Bannerghatta Road, Bengaluru",
+    "area": "3,100 sq. ft.",
+    "stage": "Floor-to-Ceiling Sliding Glass Wardrobes & Walk-In Closet",
+    "caption": "High-precision floor-to-ceiling tinted glass sliding wardrobes with anodized bronze aluminum frames, motion-sensor warm LED tracks, and modular organizers.",
+    "highlights": [
+      "Top-hung soft-close slide-rail glide test with zero bottom track obstruction",
+      "Sensor-activated warm 2700K CRI 95+ vertical LED extrusion integration",
+      "Anti-deflection aluminum door stiffener alignment on 2.7m tall door leaves"
+    ],
+    "id": "salarpuria-sattva-magnolia-wardrobes",
+    "image": "/gallery/img-06.webp",
+    "alt": "Salarpuria Sattva Magnolia floor-to-ceiling tinted glass sliding wardrobes with motion sensor lighting."
   }
 ];

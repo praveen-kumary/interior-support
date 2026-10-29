@@ -10,6 +10,13 @@ import {
   Layers,
   FileCheck,
   BadgeCheck,
+  Building2,
+  Code2,
+  Cpu,
+  Globe,
+  MapPin,
+  Sparkles,
+  ExternalLink,
 } from "lucide-react";
 
 import projectSite from "@/assets/interior-project-site.webp";
@@ -182,6 +189,112 @@ const auditMetrics = [
     sub: "Sub-millimeter joinery & level standards",
   },
   { numericValue: 100, suffix: "%", label: "Defect Rectification", sub: "No payments approved until snags close" },
+];
+
+const featuredCaseStudies = [
+  {
+    title: "Prestige Golfshire Luxury Villa Fit-Out Audit",
+    location: "Nandi Hills Road, Bengaluru North",
+    type: "5BHK Signature Golf Villa",
+    area: "6,800 sq. ft.",
+    stage: "MEP Ducting & Italian Marble Levelling Audit",
+    image: "/gallery/img-01.webp",
+    deliverable: "Sub-millimeter laser plumb & 10-bar hydrostatic plumbing audit",
+    slug: "prestige-golfshire-luxury-villa-audit",
+  },
+  {
+    title: "Brigade Gateway Penthouse Joinery & Paneling",
+    location: "Rajajinagar, Bengaluru",
+    type: "Duplex Penthouse Suite",
+    area: "4,500 sq. ft.",
+    stage: "Full-Height Boiserie & Acoustic Paneling Sign-Off",
+    image: "/gallery/img-02.webp",
+    deliverable: "Mitre joint alignment tolerance within ±0.5mm & pivot hinge load audit",
+    slug: "brigade-gateway-penthouse-joinery-paneling",
+  },
+  {
+    title: "Embassy Tech Village Commercial Office Interiors",
+    location: "Outer Ring Road, Bengaluru",
+    type: "Enterprise Tech Workspace",
+    area: "18,500 sq. ft.",
+    stage: "Fast-Track MEP, HVAC & Modular Desk Grid Audit",
+    image: "/gallery/img-03.webp",
+    deliverable: "Airflow balancing, dual-circuit UPS power & fire sprinkler radius audit",
+    slug: "embassy-tech-village-commercial-office",
+  },
+  {
+    title: "Sobha Lifestyle Presidential Residence Kitchen",
+    location: "Devanahalli, Bengaluru",
+    type: "Presidential Villa",
+    area: "7,200 sq. ft.",
+    stage: "German Modular Kitchen & Quartz Island Handover",
+    image: "/gallery/img-04.webp",
+    deliverable: "Zero-lip 3.2m quartz waterfall island & waterproof PU edge laser audit",
+    slug: "sobha-lifestyle-presidential-residence",
+  },
+  {
+    title: "Total Environment Windmills Duplex Renovation",
+    location: "Whitefield, Bengaluru",
+    type: "Earth-Sheltered Duplex Residence",
+    area: "5,100 sq. ft.",
+    stage: "Exposed Wire-Cut Brick & Teak Millwork Integration",
+    image: "/gallery/img-05.webp",
+    deliverable: "4-meter cantilevered teak console load certification & 4K AV conduit check",
+    slug: "total-environment-windmills-duplex",
+  },
+  {
+    title: "Salarpuria Sattva Magnolia Contemporary Flat",
+    location: "Bannerghatta Road, Bengaluru",
+    type: "4BHK Luxury Apartment",
+    area: "3,100 sq. ft.",
+    stage: "Floor-to-Ceiling Sliding Glass Wardrobes & Walk-In Closet",
+    image: "/gallery/img-06.webp",
+    deliverable: "Top-hung soft-close rail glide test & 2.7m anti-deflection stiffener audit",
+    slug: "salarpuria-sattva-magnolia-wardrobes",
+  },
+];
+
+const techStackItems = [
+  {
+    name: "TanStack Router v1.x",
+    category: "Type-Safe Routing",
+    badge: "v1.170+",
+    description:
+      "100% compile-time type safety across route params, search validations, and zero-waterfall preloaders.",
+    icon: Code2,
+  },
+  {
+    name: "Tailwind CSS v3.4 + Radix UI",
+    category: "Design System & Tokens",
+    badge: "WCAG AAA",
+    description:
+      "Architectural design tokens, fluid typography, high-contrast dark aesthetic, and accessible keyboard-navigable primitives.",
+    icon: Layers,
+  },
+  {
+    name: "Cloudflare Pages & Edge Workers",
+    category: "Global Edge Network",
+    badge: "Sub-50ms TTFB",
+    description:
+      "Distributed static asset delivery with HTTP/3, Brotli compression, and instant regional edge cache invalidation.",
+    icon: Globe,
+  },
+  {
+    name: "Lucide Icons & ScrollMotion",
+    category: "Micro-Interactions",
+    badge: "60 FPS",
+    description:
+      "Lightweight scalable SVGs with hardware-accelerated intersection observer animations and telemetry counters.",
+    icon: Sparkles,
+  },
+  {
+    name: "TypeScript 5.x Strict Mode",
+    category: "Static Reliability",
+    badge: "Strict Null Checks",
+    description:
+      "Zero-any guarantee across data contracts, gallery schemas, component props, and pricing calculator engines.",
+    icon: Cpu,
+  },
 ];
 
 export const Route = createFileRoute("/")({
@@ -682,6 +795,192 @@ function HomePage() {
           </div>
         </section>
 
+        {/* SECTION 04: FEATURED CASE STUDIES & FIELD AUDIT SHOWCASE */}
+        <section
+          className="featured-projects-section py-20 bg-background border-t border-border/60"
+          id="case-studies"
+          aria-labelledby="case-studies-title"
+          data-reveal
+        >
+          <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+            <div className="section-index">
+              <span>04</span>
+              <span className="index-rule" /> Featured Site Audits
+            </div>
+
+            <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mt-4 mb-12">
+              <div>
+                <p className="eyebrow eyebrow-dark">Real Projects. Real Oversight.</p>
+                <h2
+                  id="case-studies-title"
+                  className="text-3xl sm:text-4xl lg:text-5xl font-display font-medium text-foreground mt-2 leading-[1.08]"
+                >
+                  Precision Audits Across
+                  <br />
+                  <em className="text-gold italic font-serif">Marquee Residences & Workplaces</em>
+                </h2>
+              </div>
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                <p className="text-muted-foreground text-xs sm:text-sm max-w-md leading-relaxed">
+                  Explore our documented inspection case studies verifying MEP tolerances, joinery
+                  alignments, and handover milestones across Bengaluru.
+                </p>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="border-gold/50 text-gold hover:bg-gold hover:text-charcoal transition-colors flex-shrink-0"
+                  asChild
+                >
+                  <Link to="/gallery">
+                    View All 60+ Projects <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
+                  </Link>
+                </Button>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {featuredCaseStudies.map((study, idx) => (
+                <div
+                  key={study.slug}
+                  data-reveal
+                  data-reveal-delay={(idx + 1) * 80}
+                  className="group bg-card/60 border border-border/70 hover:border-gold/70 transition-all duration-300 rounded-xs overflow-hidden flex flex-col justify-between shadow-xs hover:shadow-lg premium-card-hover"
+                >
+                  <div>
+                    <div className="aspect-[16/10] overflow-hidden relative bg-muted">
+                      <img
+                        src={study.image}
+                        alt={study.title}
+                        width={800}
+                        height={500}
+                        loading="lazy"
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                      <div className="absolute top-3 left-3 px-2 py-1 bg-charcoal/90 backdrop-blur-xs text-[0.6rem] font-mono uppercase tracking-wider text-gold border border-gold/30 rounded-2xs">
+                        {study.type}
+                      </div>
+                      <div className="absolute bottom-3 right-3 px-2 py-1 bg-charcoal/90 backdrop-blur-xs text-[0.6rem] font-mono text-muted-foreground border border-border/40 rounded-2xs">
+                        {study.area}
+                      </div>
+                    </div>
+
+                    <div className="p-5">
+                      <div className="flex items-center gap-1.5 text-[0.68rem] text-gold font-medium mb-1.5">
+                        <MapPin className="w-3 h-3 text-gold flex-shrink-0" />
+                        <span>{study.location}</span>
+                      </div>
+
+                      <h3 className="font-display font-semibold text-foreground group-hover:text-gold transition-colors text-base leading-snug">
+                        {study.title}
+                      </h3>
+
+                      <p className="text-xs text-muted-foreground mt-2 line-clamp-2 leading-relaxed">
+                        {study.stage}
+                      </p>
+
+                      <div className="mt-4 pt-3 border-t border-border/40">
+                        <span className="text-[0.6rem] font-bold uppercase tracking-wider text-gold block mb-1">
+                          Audited Deliverable
+                        </span>
+                        <p className="text-[0.72rem] text-foreground font-medium leading-snug">
+                          {study.deliverable}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="px-5 pb-5 pt-2">
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="w-full justify-between text-xs text-muted-foreground group-hover:text-gold group-hover:bg-gold/10 border border-transparent group-hover:border-gold/30 h-8 px-3"
+                      asChild
+                    >
+                      <Link to="/gallery">
+                        <span>Inspect Field Verification</span>
+                        <ArrowRight className="w-3.5 h-3.5 arrow-spring" />
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION 05: PLATFORM ENGINEERING & MODERN TECH STACK */}
+        <section
+          className="tech-stack-section py-20 bg-secondary/30 border-t border-border/60"
+          id="tech-stack"
+          aria-labelledby="tech-stack-title"
+          data-reveal
+        >
+          <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+            <div className="section-index">
+              <span>05</span>
+              <span className="index-rule" /> Platform Architecture
+            </div>
+
+            <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mt-4 mb-12">
+              <div>
+                <p className="eyebrow eyebrow-dark">Modern Web Engineering</p>
+                <h2
+                  id="tech-stack-title"
+                  className="text-3xl sm:text-4xl lg:text-5xl font-display font-medium text-foreground mt-2 leading-[1.08]"
+                >
+                  Engineered with
+                  <br />
+                  <em className="text-gold italic font-serif">Modern Production Standards</em>
+                </h2>
+              </div>
+              <p className="text-muted-foreground text-xs sm:text-sm max-w-md leading-relaxed">
+                Just as we enforce sub-millimeter tolerances on physical job sites, our digital platform
+                is architected with strict type safety, zero-waterfall routing, and high-performance edge delivery.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+              {techStackItems.map((tech, idx) => {
+                const Icon = tech.icon;
+                return (
+                  <div
+                    key={tech.name}
+                    data-reveal
+                    data-reveal-delay={(idx + 1) * 70}
+                    className="p-5 bg-card border border-border/70 hover:border-gold/60 transition-all duration-300 rounded-xs flex flex-col justify-between group shadow-2xs hover:shadow-md premium-card-hover"
+                  >
+                    <div>
+                      <div className="flex items-center justify-between mb-4">
+                        <div className="p-2.5 bg-secondary rounded-xs border border-border/60 group-hover:border-gold/50 group-hover:bg-gold/10 transition-colors">
+                          <Icon className="w-5 h-5 text-gold group-hover:scale-110 transition-transform" />
+                        </div>
+                        <span className="text-[0.62rem] font-mono px-2 py-0.5 bg-secondary text-gold rounded-2xs border border-gold/30">
+                          {tech.badge}
+                        </span>
+                      </div>
+
+                      <span className="text-[0.62rem] font-bold uppercase tracking-wider text-muted-foreground block">
+                        {tech.category}
+                      </span>
+                      <h4 className="font-display font-semibold text-foreground group-hover:text-gold transition-colors text-sm mt-1 leading-snug">
+                        {tech.name}
+                      </h4>
+                      <p className="text-[0.72rem] text-muted-foreground mt-2 leading-relaxed">
+                        {tech.description}
+                      </p>
+                    </div>
+
+                    <div className="mt-4 pt-3 border-t border-border/40 flex items-center gap-1.5 text-[0.65rem] text-gold font-medium">
+                      <CheckCircle2 className="w-3 h-3 text-gold" />
+                      <span>Production Verified</span>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
         {/* PROMISE SECTION */}
         <section className="promise-section" aria-label="Interior Support promise" data-reveal>
           <div className="promise-mark" aria-hidden="true">
@@ -757,7 +1056,7 @@ function HomePage() {
           </div>
           <div className="contact-copy">
             <div className="section-index">
-              <span>04</span>
+              <span>06</span>
               <span className="index-rule" /> Start a conversation
             </div>
             <p className="eyebrow eyebrow-dark">Your interior. Our responsibility.</p>

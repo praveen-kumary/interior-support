@@ -31,7 +31,7 @@ export const Route = createFileRoute("/gallery")({
       {
         name: "description",
         content:
-          "Explore 55+ authentic residential and commercial interior fit-out projects audited and managed by Interior Support across Bengaluru — modular kitchens, wardrobes, boiserie wall paneling, and site quality audits.",
+          "Explore 60+ authentic residential and commercial interior fit-out projects audited and managed by Interior Support across Bengaluru — modular kitchens, wardrobes, boiserie wall paneling, and site quality audits.",
       },
       {
         name: "keywords",
