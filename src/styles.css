@@ -1257,10 +1257,6 @@ pre {
 }
 .mobile-menu-toggle {
   display: none;
-  color: var(--background);
-}
-.mobile-nav {
-  display: none;
 }
 
 .subpage {

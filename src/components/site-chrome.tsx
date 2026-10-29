@@ -15,7 +15,7 @@ import {
   ArrowUp,
   CheckCircle2,
 } from "lucide-react";
-import { Link } from "@tanstack/react-router";
+import { Link, useRouterState } from "@tanstack/react-router";
 
 import { BrandLogo } from "@/components/brand-logo";
 import { Button } from "@/components/ui/button";
@@ -68,6 +68,15 @@ export function SiteHeader() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [showFloatingDock, setShowFloatingDock] = useState(false);
+
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+
+  // Close menus automatically on route change
+  useEffect(() => {
+    setMenuOpen(false);
+    setMobileServicesOpen(false);
+    setDropdownOpen(false);
+  }, [pathname]);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -145,9 +154,11 @@ export function SiteHeader() {
       <header
         className={`site-header transition-all duration-300 ${
           isScrolled ? "is-scrolled" : ""
-        }`}
+        } ${menuOpen ? "!z-[80]" : ""}`}
       >
-        <div className="header-inner flex items-center justify-between">
+        <div className={`header-inner flex items-center justify-between transition-all duration-300 ${
+          menuOpen ? "!bg-[#12110e]/95 !border-gold/30 !shadow-2xl" : ""
+        }`}>
           <BrandLogo onClick={() => setMenuOpen(false)} />
 
           <nav
@@ -290,7 +301,12 @@ export function SiteHeader() {
           </div>
 
           <Button
-            className="mobile-menu-toggle lg:hidden w-10 h-10 rounded-full bg-white/[0.08] hover:bg-white/[0.16] border border-white/15 text-white flex items-center justify-center transition-all duration-200 active:scale-95 p-0"
+            type="button"
+            className={`mobile-menu-toggle lg:hidden w-10 h-10 rounded-full border flex items-center justify-center transition-all duration-200 active:scale-95 p-0 cursor-pointer ${
+              menuOpen
+                ? "bg-gold/20 border-gold/60 text-gold shadow-[0_0_15px_rgba(197,168,128,0.35)]"
+                : "bg-white/[0.08] hover:bg-white/[0.16] border-white/15 text-white"
+            }`}
             variant="ghost"
             size="icon"
             aria-label={menuOpen ? "Close navigation" : "Open navigation"}
@@ -301,132 +317,148 @@ export function SiteHeader() {
             {menuOpen ? (
               <X aria-hidden="true" className="w-5 h-5 text-gold" />
             ) : (
-              <Menu aria-hidden="true" className="w-5 h-5" />
+              <Menu aria-hidden="true" className="w-5 h-5 text-white" />
             )}
           </Button>
         </div>
+      </header>
 
-        {/* MOBILE NAVIGATION DRAWER & BACKDROP */}
-        {menuOpen && (
-          <div
-            className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm lg:hidden transition-opacity duration-300 pointer-events-auto"
-            onClick={() => setMenuOpen(false)}
-            aria-hidden="true"
-          />
-        )}
+      {/* MOBILE NAVIGATION BACKDROP */}
+      {menuOpen && (
+        <div
+          className="fixed inset-0 z-[60] bg-black/75 backdrop-blur-sm lg:hidden transition-opacity duration-300 pointer-events-auto cursor-pointer"
+          onClick={() => setMenuOpen(false)}
+          aria-hidden="true"
+        />
+      )}
 
-        <nav
-          id="mobile-navigation"
-          className={`mobile-nav fixed top-[70px] sm:top-[74px] inset-x-3 sm:inset-x-6 z-50 lg:hidden rounded-2xl bg-[#12110e]/98 border border-gold/40 shadow-[0_24px_50px_-10px_rgba(0,0,0,0.95),0_0_24px_rgba(197,168,128,0.2)] backdrop-blur-2xl transition-all duration-300 overflow-hidden ${
-            menuOpen
-              ? "opacity-100 translate-y-0 visible pointer-events-auto"
-              : "opacity-0 -translate-y-4 invisible pointer-events-none"
-          }`}
-          aria-label="Mobile navigation"
-        >
-          <div className="mobile-nav-inner p-5 max-h-[calc(100svh-95px)] overflow-y-auto space-y-4">
-            <div className="divide-y divide-white/10">
-              {navLinks.map((item, index) => {
-                if (item.hasDropdown) {
-                  return (
-                    <div key={item.to} className="py-1">
-                      <button
-                        type="button"
-                        onClick={() => setMobileServicesOpen((prev) => !prev)}
-                        className="w-full flex items-center justify-between py-2.5 text-left text-white/95 hover:text-gold transition-colors"
-                      >
-                        <div className="flex items-center gap-3">
-                          <span className="text-xs text-gold/80 font-mono font-semibold">{`0${index + 1}`}</span>
-                          <span className="font-display font-medium text-base tracking-wide">{item.label}</span>
-                        </div>
-                        <ChevronDown
-                          className={`w-4 h-4 text-gold transition-transform duration-200 ${
-                            mobileServicesOpen ? "rotate-180" : ""
-                          }`}
-                        />
-                      </button>
+      {/* MOBILE NAVIGATION FLOATING LUXURY DRAWER */}
+      <nav
+        id="mobile-navigation"
+        className={`mobile-nav fixed top-[64px] sm:top-[72px] inset-x-3 sm:inset-x-6 z-[70] block lg:hidden rounded-2xl bg-[#12110e]/98 border border-gold/40 shadow-[0_24px_50px_-10px_rgba(0,0,0,0.95),0_0_24px_rgba(197,168,128,0.2)] backdrop-blur-2xl transition-all duration-300 overflow-hidden ${
+          menuOpen
+            ? "opacity-100 translate-y-0 visible pointer-events-auto"
+            : "opacity-0 -translate-y-4 invisible pointer-events-none"
+        }`}
+        aria-label="Mobile navigation"
+      >
+        <div className="mobile-nav-inner p-4 sm:p-5 max-h-[calc(100svh-84px)] overflow-y-auto space-y-4 overscroll-contain">
+          {/* Quick drawer header with close action */}
+          <div className="flex items-center justify-between pb-3 border-b border-white/10">
+            <span className="text-[0.65rem] font-mono tracking-widest text-gold uppercase font-semibold">
+              Navigation Menu // Bengaluru PMC
+            </span>
+            <button
+              type="button"
+              onClick={() => setMenuOpen(false)}
+              className="p-1 rounded-full text-white/60 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
+              aria-label="Close menu"
+            >
+              <X className="w-4 h-4 text-gold/80" />
+            </button>
+          </div>
 
-                      {mobileServicesOpen && (
-                        <div className="pl-3 pr-1 py-2 space-y-1.5 border-l-2 border-gold/40 my-1 bg-white/[0.03] rounded-r-xl">
-                          {serviceSublinks.map((s) => (
-                            <Link
-                              key={s.to}
-                              to={s.to}
-                              onClick={() => setMenuOpen(false)}
-                              className="flex items-start justify-between p-2 rounded-lg hover:bg-white/[0.08] transition-colors group"
-                            >
-                              <div>
-                                <div className="flex items-center gap-2">
-                                  <span className="text-[0.65rem] font-mono text-gold font-bold">{s.number}</span>
-                                  <span className="text-xs font-display font-medium text-white group-hover:text-gold transition-colors">
-                                    {s.label}
-                                  </span>
-                                </div>
-                                <p className="text-[0.68rem] text-white/60 mt-0.5 line-clamp-1">{s.description}</p>
-                              </div>
-                              <span className="text-[0.58rem] px-1.5 py-0.5 rounded-full bg-gold/15 text-gold border border-gold/30 font-mono shrink-0 ml-2">
-                                {s.tag}
-                              </span>
-                            </Link>
-                          ))}
-                          <div className="pt-1 pl-2">
-                            <Link
-                              to="/services"
-                              onClick={() => setMenuOpen(false)}
-                              className="text-[0.72rem] text-gold font-medium hover:underline inline-flex items-center gap-1"
-                            >
-                              All Disciplines Overview <ArrowRight className="w-3 h-3" />
-                            </Link>
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  );
-                }
-
+          <div className="divide-y divide-white/10">
+            {navLinks.map((item, index) => {
+              if (item.hasDropdown) {
                 return (
                   <div key={item.to} className="py-1">
-                    <Link
-                      to={item.to}
-                      activeProps={{ className: "text-gold font-semibold" }}
-                      onClick={() => setMenuOpen(false)}
-                      className="flex items-center py-2.5 text-white/90 hover:text-gold transition-colors group"
+                    <button
+                      type="button"
+                      onClick={() => setMobileServicesOpen((prev) => !prev)}
+                      className="w-full flex items-center justify-between py-2.5 text-left text-white/95 hover:text-gold transition-colors cursor-pointer"
                     >
-                      <span className="text-xs text-gold/80 mr-3 font-mono font-semibold">{`0${index + 1}`}</span>
-                      <span className="font-display font-medium text-base tracking-wide">{item.label}</span>
-                      <ArrowRight aria-hidden="true" className="w-4 h-4 ml-auto text-white/40 group-hover:text-gold group-hover:translate-x-0.5 transition-all" />
-                    </Link>
+                      <div className="flex items-center gap-3">
+                        <span className="text-xs text-gold/80 font-mono font-semibold">{`0${index + 1}`}</span>
+                        <span className="font-display font-medium text-base tracking-wide">{item.label}</span>
+                      </div>
+                      <ChevronDown
+                        className={`w-4 h-4 text-gold transition-transform duration-200 ${
+                          mobileServicesOpen ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+
+                    {mobileServicesOpen && (
+                      <div className="pl-3 pr-1 py-2 space-y-1.5 border-l-2 border-gold/40 my-1 bg-white/[0.03] rounded-r-xl">
+                        {serviceSublinks.map((s) => (
+                          <Link
+                            key={s.to}
+                            to={s.to}
+                            onClick={() => setMenuOpen(false)}
+                            className="flex items-start justify-between p-2 rounded-lg hover:bg-white/[0.08] transition-colors group"
+                          >
+                            <div>
+                              <div className="flex items-center gap-2">
+                                <span className="text-[0.65rem] font-mono text-gold font-bold">{s.number}</span>
+                                <span className="text-xs font-display font-medium text-white group-hover:text-gold transition-colors">
+                                  {s.label}
+                                </span>
+                              </div>
+                              <p className="text-[0.68rem] text-white/60 mt-0.5 line-clamp-1">{s.description}</p>
+                            </div>
+                            <span className="text-[0.58rem] px-1.5 py-0.5 rounded-full bg-gold/15 text-gold border border-gold/30 font-mono shrink-0 ml-2">
+                              {s.tag}
+                            </span>
+                          </Link>
+                        ))}
+                        <div className="pt-1 pl-2">
+                          <Link
+                            to="/services"
+                            onClick={() => setMenuOpen(false)}
+                            className="text-[0.72rem] text-gold font-medium hover:underline inline-flex items-center gap-1"
+                          >
+                            All Disciplines Overview <ArrowRight className="w-3 h-3" />
+                          </Link>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 );
-              })}
-            </div>
+              }
 
-            <div className="pt-3 border-t border-white/10 space-y-2.5">
-              <Button
-                className="w-full bg-gold text-[#12110e] hover:bg-[#d8c09a] font-semibold text-xs py-3 rounded-full shadow-md"
-                asChild
-                onClick={() => setMenuOpen(false)}
-              >
-                <Link to="/get-a-quote">
-                  Get a Project Quote <ArrowRight className="w-3.5 h-3.5 ml-1" aria-hidden="true" />
-                </Link>
-              </Button>
-
-              <a
-                href="tel:+919820184729"
-                className="w-full flex items-center justify-center gap-2 py-2 px-3 rounded-full border border-white/15 bg-white/[0.04] text-white/90 hover:text-gold hover:border-gold/40 text-xs font-mono transition-colors"
-              >
-                <Phone className="w-3.5 h-3.5 text-gold" />
-                <span>Direct Advisory: +91 98201 84729</span>
-              </a>
-
-              <p className="text-[0.62rem] text-white/50 text-center font-mono tracking-wider uppercase pt-1">
-                Bengaluru • 100% Client-Side Independent PMC
-              </p>
-            </div>
+              return (
+                <div key={item.to} className="py-1">
+                  <Link
+                    to={item.to}
+                    activeProps={{ className: "text-gold font-semibold" }}
+                    onClick={() => setMenuOpen(false)}
+                    className="flex items-center py-2.5 text-white/90 hover:text-gold transition-colors group"
+                  >
+                    <span className="text-xs text-gold/80 mr-3 font-mono font-semibold">{`0${index + 1}`}</span>
+                    <span className="font-display font-medium text-base tracking-wide">{item.label}</span>
+                    <ArrowRight aria-hidden="true" className="w-4 h-4 ml-auto text-white/40 group-hover:text-gold group-hover:translate-x-0.5 transition-all" />
+                  </Link>
+                </div>
+              );
+            })}
           </div>
-        </nav>
-      </header>
+
+          <div className="pt-3 border-t border-white/10 space-y-2.5">
+            <Button
+              className="w-full bg-gold text-[#12110e] hover:bg-[#d8c09a] font-semibold text-xs py-3 rounded-full shadow-md cursor-pointer"
+              asChild
+              onClick={() => setMenuOpen(false)}
+            >
+              <Link to="/get-a-quote">
+                Get a Project Quote <ArrowRight className="w-3.5 h-3.5 ml-1" aria-hidden="true" />
+              </Link>
+            </Button>
+
+            <a
+              href="tel:+919820184729"
+              className="w-full flex items-center justify-center gap-2 py-2.5 px-3 rounded-full border border-white/15 bg-white/[0.04] text-white/90 hover:text-gold hover:border-gold/40 text-xs font-mono transition-colors"
+            >
+              <Phone className="w-3.5 h-3.5 text-gold" />
+              <span>Direct Advisory: +91 98201 84729</span>
+            </a>
+
+            <p className="text-[0.62rem] text-white/50 text-center font-mono tracking-wider uppercase pt-1">
+              Bengaluru • 100% Client-Side Independent PMC
+            </p>
+          </div>
+        </div>
+      </nav>
 
       {/* ALWAYS-VISIBLE MEDIUM FLOATING WHATSAPP BUTTON */}
       <aside
