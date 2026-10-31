@@ -1,5 +1,6 @@
 # Interior Support — Client-Side Interior Quality Audit & PMC Platform
 
+[![CI](https://github.com/praveen-kumary/interior-support/actions/workflows/ci.yml/badge.svg)](https://github.com/praveen-kumary/interior-support/actions/workflows/ci.yml)
 [![React 19](https://img.shields.io/badge/React-19.2-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev)
 [![TypeScript 5.8](https://img.shields.io/badge/TypeScript-5.8-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![TanStack Start](https://img.shields.io/badge/TanStack-Start-FF4154?style=flat-square&logo=react&logoColor=white)](https://tanstack.com/start)
